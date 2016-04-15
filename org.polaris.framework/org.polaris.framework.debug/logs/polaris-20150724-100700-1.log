@@ -1,0 +1,105 @@
+2015-07-24 10:07:01,061 INFO  [ClassPathXmlApplicationContext] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3abfe836: startup date [Fri Jul 24 10:07:01 CST 2015]; root of context hierarchy
+2015-07-24 10:07:01,123 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from URL [file:/F:/codes/Linkit/org.polaris.framework/org.polaris.framework.common/target/classes/beanRefContext.xml]
+2015-07-24 10:07:01,373 INFO  [ClassPathXmlApplicationContext] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1e7c7811: startup date [Fri Jul 24 10:07:01 CST 2015]; root of context hierarchy
+2015-07-24 10:07:01,388 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.debug\target\classes\META-INF\spring\debug.xml]
+2015-07-24 10:07:01,560 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.debug\target\classes\META-INF\spring\server.xml]
+2015-07-24 10:07:01,576 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.debug\target\classes\META-INF\spring\station.xml]
+2015-07-24 10:07:01,628 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.common\target\classes\META-INF\spring\common-applicationcontext.xml]
+2015-07-24 10:07:01,691 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.authorize\target\classes\META-INF\spring\authorize-applicationcontext.xml]
+2015-07-24 10:07:01,722 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.webapp\org.polaris.framework.webapp.extjs\target\classes\META-INF\spring\extjs-applicationcontext.xml]
+2015-07-24 10:07:02,252 INFO  [Version] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-24 10:07:02,268 INFO  [Version] HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-24 10:07:02,268 INFO  [Environment] HHH000206: hibernate.properties not found
+2015-07-24 10:07:02,284 INFO  [Environment] HHH000021: Bytecode provider name : javassist
+2015-07-24 10:07:02,876 INFO  [Dialect] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-07-24 10:07:03,081 INFO  [TransactionFactoryInitiator] HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-24 10:07:03,097 INFO  [ASTQueryTranslatorFactory] HHH000397: Using ASTQueryTranslatorFactory
+2015-07-24 10:07:03,159 INFO  [Version] HV000001: Hibernate Validator 5.1.3.Final
+2015-07-24 10:07:03,518 WARN  [UUIDHexGenerator] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2015-07-24 10:07:04,376 INFO  [SchemaUpdate] HHH000228: Running hbm2ddl schema update
+2015-07-24 10:07:04,376 INFO  [SchemaUpdate] HHH000102: Fetching database metadata
+2015-07-24 10:07:04,376 INFO  [SchemaUpdate] HHH000396: Updating schema
+2015-07-24 10:07:04,408 INFO  [TableMetadata] HHH000261: Table found: test.station
+2015-07-24 10:07:04,408 INFO  [TableMetadata] HHH000037: Columns: [mnc, lng, ci, id, mcc, lat, info, lac]
+2015-07-24 10:07:04,408 INFO  [TableMetadata] HHH000108: Foreign keys: []
+2015-07-24 10:07:04,408 INFO  [TableMetadata] HHH000126: Indexes: [primary]
+2015-07-24 10:07:04,408 INFO  [SchemaUpdate] HHH000232: Schema update complete
+2015-07-24 10:07:04,627 INFO  [STDERR] 2015-07-24 10:07:04.627:INFO::main: Logging initialized @4148ms
+2015-07-24 10:07:04,876 INFO  [HandlerCollectionFactory] add ServletContextHandler: class org.eclipse.jetty.servlet.ServletContextHandler
+2015-07-24 10:07:04,907 INFO  [HandlerCollectionFactory] add ResourceHandler: class org.eclipse.jetty.server.handler.ResourceHandler
+2015-07-24 10:07:04,907 INFO  [HandlerCollectionFactory] add ResourceHandler: class org.eclipse.jetty.server.handler.ResourceHandler
+2015-07-24 10:07:04,923 INFO  [HibernateTransactionManager] Using DataSource [org.apache.commons.dbcp.BasicDataSource@4df5bcb4] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-24 10:07:04,939 INFO  [ConsoleService] loading Console service...
+2015-07-24 10:07:04,985 INFO  [ConsoleService] 
+2015-07-24 10:07:04,985 INFO  [ConsoleService] Console service loaded successful!
+2015-07-24 10:07:05,032 INFO  [STDERR] 2015-07-24 10:07:05.032:INFO:oejs.Server:Thread-1: jetty-9.2.10.v20150310
+2015-07-24 10:07:05,048 INFO  [STDERR] 2015-07-24 10:07:05.048:INFO:/api:Thread-1: Initializing Spring root WebApplicationContext
+2015-07-24 10:07:05,048 INFO  [ContextLoader] Root WebApplicationContext: initialization started
+2015-07-24 10:07:05,063 INFO  [XmlWebApplicationContext] Refreshing Root WebApplicationContext: startup date [Fri Jul 24 10:07:05 CST 2015]; parent: ApplicationContext 'polarisApplicationContext'
+2015-07-24 10:07:05,079 INFO  [ContextLoader] Root WebApplicationContext: initialization completed in 31 ms
+2015-07-24 10:07:05,095 INFO  [STDERR] 2015-07-24 10:07:05.095:INFO:/api:Thread-1: Initializing Spring FrameworkServlet 'org.springframework.web.servlet.DispatcherServlet-383f3558'
+2015-07-24 10:07:05,095 INFO  [DispatcherServlet] FrameworkServlet 'org.springframework.web.servlet.DispatcherServlet-383f3558': initialization started
+2015-07-24 10:07:05,095 INFO  [XmlWebApplicationContext] Refreshing WebApplicationContext for namespace 'org.springframework.web.servlet.DispatcherServlet-383f3558-servlet': startup date [Fri Jul 24 10:07:05 CST 2015]; parent: Root WebApplicationContext
+2015-07-24 10:07:05,095 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.debug\target\classes\META-INF\servlet\debug-servlet.xml]
+2015-07-24 10:07:05,204 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.webapp\org.polaris.framework.webapp.extjs\target\classes\META-INF\servlet\extjs-servlet.xml]
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/menu/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.polaris.framework.webapp.extjs.Node[] org.polaris.framework.debug.controller.MenuController.load(java.lang.String)
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/station],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.polaris.framework.common.rest.FormResult org.polaris.framework.debug.controller.StationController.save(org.polaris.framework.debug.vo.Station)
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/station/grid],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.polaris.framework.common.rest.PagingResult<org.polaris.framework.debug.vo.Station> org.polaris.framework.debug.controller.StationController.getStations(java.lang.Integer,java.lang.Integer)
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/station/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.polaris.framework.common.rest.FormResult org.polaris.framework.debug.controller.StationController.getStation(java.lang.String)
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/station/grid],methods=[DELETE],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.polaris.framework.common.rest.FormResult org.polaris.framework.debug.controller.StationController.deleteStations(org.polaris.framework.debug.vo.Station[])
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/station/grid],methods=[PUT],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.polaris.framework.common.rest.FormResult org.polaris.framework.debug.controller.StationController.updateStations(org.polaris.framework.debug.vo.Station[])
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/station/grid],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.polaris.framework.common.rest.FormResult org.polaris.framework.debug.controller.StationController.insertStations(org.polaris.framework.debug.vo.Station[])
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/test/tt],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.StringBuffer org.polaris.framework.debug.vo.StationTest.tt()
+2015-07-24 10:07:05,453 INFO  [RequestMappingHandlerMapping] Mapped "{[/extjs],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.polaris.framework.webapp.extjs.ExtjsController.test()
+2015-07-24 10:07:05,831 INFO  [RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'org.springframework.web.servlet.DispatcherServlet-383f3558-servlet': startup date [Fri Jul 24 10:07:05 CST 2015]; parent: Root WebApplicationContext
+2015-07-24 10:07:05,909 INFO  [RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'org.springframework.web.servlet.DispatcherServlet-383f3558-servlet': startup date [Fri Jul 24 10:07:05 CST 2015]; parent: Root WebApplicationContext
+2015-07-24 10:07:06,080 INFO  [DispatcherServlet] FrameworkServlet 'org.springframework.web.servlet.DispatcherServlet-383f3558': initialization completed in 985 ms
+2015-07-24 10:07:06,080 INFO  [STDERR] 2015-07-24 10:07:06.080:INFO:oejsh.ContextHandler:Thread-1: Started o.e.j.s.ServletContextHandler@48cf47a{/api,null,AVAILABLE}
+2015-07-24 10:07:06,112 INFO  [STDERR] 2015-07-24 10:07:06.112:INFO:oejs.ServerConnector:Thread-1: Started ServerConnector@74b39e21{HTTP/1.1}{0.0.0.0:6001}
+2015-07-24 10:07:06,112 INFO  [STDERR] 2015-07-24 10:07:06.112:INFO:oejs.Server:Thread-1: Started @5632ms
+2015-07-24 10:07:15,218 ERROR [StationTest] 数据库操作异常
+org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread
+	at org.springframework.orm.hibernate4.SpringSessionContext.currentSession(SpringSessionContext.java:134)
+	at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:1014)
+	at org.polaris.framework.common.dao.HibernateTemplate.save(HibernateTemplate.java:165)
+	at org.polaris.framework.debug.dao.StationDao.insert(StationDao.java:18)
+	at org.polaris.framework.debug.vo.StationTest.tt(StationTest.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:777)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:706)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:808)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+	at java.lang.Thread.run(Thread.java:745)
+2015-07-24 10:07:15,231 INFO  [StationTest] 运行了catch运行了finally

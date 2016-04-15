@@ -1,0 +1,1136 @@
+<div class="row">
+	<div class="page-header">Egg donor profile upload</div>
+	<div class="page-body">
+		<div class="progress">
+		  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" id="progressBar"
+		  	aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:12.5%;">
+		    12.5%
+		  </div>
+		</div>
+		<div class="col-sm-12">
+			<div id="part1Div">
+				<legend>1 Personal Information</legend>
+				<form data-callback="switchProgressBar('25%');switchDisplayState('part2Div','part1Div');" id="part1Form"
+					class="form-horizontal garsiForm" method="post" action="api/egg">
+					<input type="hidden" name="id"/>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label required">1. Name(s) First/Middle/Last/Maiden:</label>
+						<div class="col-sm-5">
+							<div class="row">
+							  <div class="col-sm-4">
+							    <input type="text" class="form-control required" name="fullName" placeholder="First Name">
+							  </div>
+							  <div class="col-sm-4">
+							    <input type="text" class="form-control" name="middleName" placeholder="Middle Name">
+							  </div>
+							  <div class="col-sm-4">
+							    <input type="text" class="form-control required" name="lastName" placeholder="Last Name">
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label required">2. Birthdate:</label>
+						<div class="col-sm-5 input-append date form_datetime" data-callback="Birthdate2Age('birthdate','age')" data-datepicker="date" data-date-format="mm/dd/yyyy">
+							<input type="text" class="form-control required" name="birthdate" id="birthdate" data-date-format="mm/dd/yyyy"/>
+							<span class="add-on"><i class="icon-remove"></i></span>
+							<span class="add-on"><i class="icon-th"></i></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label required">2.1. Age:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control required number" min="1" max="99" name="age" id="age" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label required">3. Blood Type:</label>
+						<div class="col-sm-5">
+							<select class="form-control required" name="bloodType">
+								<option></option>
+								<option value="A+">A+</option>
+								<option value="A-">A-</option>
+								<option value="B+">B+</option>
+								<option value="B-">B-</option>
+								<option value="O+">O+</option>
+								<option value="O-">O-</option>
+								<option value="AB+">AB+</option>
+								<option value="AB-">AB-</option>
+								<option value="Unknown">Unknown</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">4. Race:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="race">
+								<option></option>
+								<option value="Asian">Asian</option>
+								<option value="Native American">Native American</option>
+								<option value="African Descent">African Descent </option>
+								<option value="White/Caucasian">White/Caucasian</option>
+								<option value="Latino/Hispanic">Latino/Hispanic</option>
+								<option value="Multi-race">Multi-race</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">5. Ethnic Origin:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="ethnicOrigin" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label required">6. Height(feet):</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control required number" min="1" max="20" name="height" id="height" onblur="computeBMI('height','weight','bmi')"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label required">7. Weight(pound):</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control required number" min="1" max="999" name="weight" id="weight" onblur="computeBMI('height','weight','bmi')"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label required">8. BMI:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control required" name="bmi" id="bmi" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">9. Skin Tone:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="skinTone">
+								<option></option>
+								<option value="Very fair">Very fair</option>
+								<option value="Fair">Fair</option>
+								<option value="Light">Light</option>
+								<option value="Medium">Medium</option>
+								<option value="Olive">Olive</option>
+								<option value="Brown">Brown</option>
+								<option value="Ebony">Ebony</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">10. Skin Type:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="skinType">
+								<option></option>
+								<option value="Normal">Normal</option>
+								<option value="Dry">Dry</option>
+								<option value="Oily">Oily</option>
+								<option value="Sensitive">Sensitive</option>
+								<option value="Combination">Combination</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">11. Eye Color:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="eyeColor">
+								<option></option>
+								<option value="Brown(light)">Brown(light)</option>
+								<option value="Brown(medium)">Brown(medium)</option>
+								<option value="Brown(dark)">Brown(dark)</option>
+								<option value="Blue">Blue</option>
+								<option value="Green">Green</option>
+								<option value="Hazel">Hazel</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">12. Hair Color:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="hairColor">
+								<option></option>
+								<option value="Brown(light)">Brown(light)</option>
+								<option value="Brown(medium)">Brown(medium)</option>
+								<option value="Brown(dark)">Brown(dark)</option>
+								<option value="Black">Black</option>
+								<option value="Blond(light)">Blond(light)</option>
+								<option value="Blond(medium)">Blond(medium)</option>
+								<option value="Blond(dark)">Blond(dark)</option>
+								<option value="Red">Red</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">13. Hair Type:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="hairType">
+								<option></option>
+								<option value="Straight">Straight</option>
+								<option value="Medium">Medium</option>
+								<option value="Wavy">Wavy</option>
+								<option value="Curly">Curly</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">14. Hair Texture:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="hairTexture">
+								<option></option>
+								<option value="Fine">Fine</option>
+								<option value="Medium">Medium</option>
+								<option value="Coarse">Coarse</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">15. Body Type:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="bodyType">
+								<option></option>
+								<option value="Petit">Petit</option>
+								<option value="Small">Small</option>
+								<option value="Medium">Medium</option>
+								<option value="Large">Large</option>
+								<option value="Extra-large">Extra-large</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">16. Native Tongue:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="nativeTongue" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">17. Marital Status:</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="maritalStatus">
+								<option></option>
+								<option value="Single">Single</option>
+								<option value="Married">Married</option>
+								<option value="Divorced">Divorced</option>
+								<option value="Widowed">Widowed</option>
+								<option value="Separated">Separated</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">18. Do you drive?</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="drive">
+								<option></option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">19. Compenstation:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="compenstation" />
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							
+							<button class="btn btn-primary" type="submit">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="part2Div" style="display: none;">
+				<legend>2 Donation History</legend>
+				<form data-callback="switchProgressBar('37.5%');switchDisplayState('part3Div','part2Div');" id="part2Form"
+					class="form-horizontal garsiForm" method="post" action="api/egg/donateask">
+					<input type="hidden" name="resourceId"/>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">1. Have you ever donated before?</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="isDonate">
+								<option></option>
+								<option value="yes">yes</option>
+								<option value="no">no</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10 col-sm-offset-1">
+							<label for="control-label" class="control-label">2. If the answer is “yes”, please fill out below:</label>
+							<table class="table table-bordered" id="donationTable">
+								<tr>
+									<td style="width:12%">
+										Donation
+									</td>
+									<td>
+										Date
+									</td>
+									<td>
+										Place
+									</td>
+									<td>
+										# of retrieved eggs
+									</td>
+									<td>
+										# of mature eggs 
+									</td>
+									<td>
+										# of fertilize eggs 
+									</td>
+									<td>
+										Pregnancy (yes/no) 
+									</td>
+									<td style="width:10%">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										1 Donation
+									</td>
+									<td>
+										<input type="text" class="form-control" name="donateDate" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="place" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="retrievedEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="matureEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="fertilizeEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="pregnancy" />
+									</td>
+									<td>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										2 Donation
+									</td>
+									<td>
+										<input type="text" class="form-control" name="donateDate" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="place" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="retrievedEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="matureEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="fertilizeEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="pregnancy" />
+									</td>
+									<td>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										3 Donation
+									</td>
+									<td>
+										<input type="text" class="form-control" name="donateDate" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="place" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="retrievedEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="matureEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="fertilizeEgg" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="pregnancy" />
+									</td>
+									<td>
+										<button class="btn btn-mini btn-default" type="button" id="del" disabled="disabled">-</button>
+										<button class="btn btn-mini btn-default" type="button" id="add">+</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">3. What type of contact would you like with the recipient(s)?</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="contactType">
+								<option></option>
+								<option value="Keep anonymous">Keep anonymous</option>
+								<option value="Meet/talk to them">Meet/talk to them</option>
+							</select>
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							<button class="btn btn-default" type="button" onclick="switchProgressBar('12.5%');switchDisplayState('part1Div','part2Div');">Previous</button>
+							<button class="btn btn-primary" type="submit">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="part3Div" style="display: none;">
+				<legend>3 Education/Occupation</legend>
+				<form data-callback="switchProgressBar('50%');switchDisplayState('part4Div','part3Div');" id="part3Form"
+					class="form-horizontal garsiForm" method="post" action="api/egg/edu">
+					<input type="hidden" name="resourceId"/>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">1. Completed Edu. to the highest level of education completed:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="fullEdu" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">2. High school to Name of high school you attended:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="school" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">3. University to Name of university you attended:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="university" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">4. GPA:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="gpa" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">5. Major:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="major" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">6. What languages can you speak?</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="language" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">7. Remove fluency:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="fluency" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">8. Current occupation:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="occupation" />
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							<button class="btn btn-default" type="button" onclick="switchProgressBar('25%');switchDisplayState('part2Div','part3Div');">Previous</button>
+							<button class="btn btn-primary" type="submit">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="part4Div" style="display: none;">
+				<legend>4 Character/Personality</legend>
+				<form data-callback="switchProgressBar('62.5%');switchDisplayState('part5Div','part4Div');" id="part4Form"
+					class="form-horizontal garsiForm" method="post" action="api/egg/character">
+					<input type="hidden" name="resourceId"/>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">1. Character/Personality:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="personality" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">2. Hobby/Interest:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="hobby" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">3. Talent to Talents/Special skills:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="talent" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">4. Favorite Color:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="favColor" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">5. Favorite Sesson:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="favSesson" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">6. Favorite Food:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="favFood" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">7. Favorite Movie:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="favMovie" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">8. Favorite City:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="favCity" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">9. Favorite song:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="favSong" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">10. Childhood to How was your childhood? i.e. your school life, relations with friends and families:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="childhood" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">11. Future Goal:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="futureGoal" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">12. The reason for donation:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="donation" />
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							<button class="btn btn-default" type="button" onclick="switchProgressBar('37.5%');switchDisplayState('part3Div','part4Div');">Previous</button>
+							<button class="btn btn-primary" type="submit">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="part5Div" style="display: none;">
+				<legend>5 Reproductive History</legend>
+				<form data-callback="switchProgressBar('75%');switchDisplayState('part6Div','part5Div');" id="part5Form"
+					class="form-horizontal garsiForm" method="post" action="api/egg/reproductive">
+					<input type="hidden" name="resourceId"/>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">1. Pregnancy to Have you ever been pregnant before?</label>
+						<div class="col-sm-5">
+							<select class="form-control" name="pregnancy">
+								<option></option>
+								<option value="yes">yes</option>
+								<option value="no">no</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">1.1 If yes, how many children do you have?</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="child" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">2. Age when you got your first period:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="ageFmp" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">3. Do you have regular monthly menstrual period?If no, please explain</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="regularPeriod" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">4. How many days do you bleed?</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="dayBleeding" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">5. What form of birth control are you using?</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="hatForm" />
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							<button class="btn btn-default" type="button" onclick="switchProgressBar('50%');switchDisplayState('part4Div','part5Div');">Previous</button>
+							<button class="btn btn-primary" type="submit">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="part6Div" style="display: none;">
+				<legend>6 Medical Information</legend>
+				<form data-callback="switchProgressBar('87.5%');switchDisplayState('part7Div','part6Div');" id="part6Form"
+					class="form-horizontal garsiForm" method="post" action="api/egg/healhistory">
+					<input type="hidden" name="resourceId"/>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">1. Medical problem to Have you ever had or do you have any medical problems?If yes, please explain.</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="medicalProblem" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">2. Psychological problem to have you ever had or do you have any psychological problems?If yes, please explain</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="phyProblem" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">3. Illness/Injury to Have you ever had or do you have any serious illnesses or injuries?If yes, please explain</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="injury" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">4. Do you have any allergy?If yes, please explain</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="allergy" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">5. Do you consume Alcoholic beverages?If yes, how often do you consume?</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="alcohol" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">6. Smoke:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="smoke" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">7. Exercise:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="exercise" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">8. Sleep Pattern:</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="sleepPattern" />
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							<button class="btn btn-default" type="button" onclick="switchProgressBar('62.5%');switchDisplayState('part5Div','part6Div');">Previous</button>
+							<button class="btn btn-primary" type="submit">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="part7Div" style="display: none;">
+				<legend>7 Family History</legend>
+				<form data-callback="switchProgressBar('99%');switchDisplayState('part8Div','part7Div');" id="part7Form"
+					class="form-horizontal garsiForm" method="post" action="api/egg/familyhistory">
+					<input type="hidden" name="resourceId"/>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">1. Are there any family members who have had or have major medical problems?If yes, please explain</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="famHistory" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">2. Are there any family members who have had or have any major psychological problems?If yes, please explain</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="famPsyIssues" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label">3. Are there any family members who have had or have major genetic diseases?If yes, please explain</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="famGenHistory" />
+						</div>
+					</div>
+					<div class="form-group">
+						
+						<div class="col-sm-10 col-sm-offset-1">
+							<label for="control-label" class="control-label">4. Please fill out below:</label>
+							<table class="table table-bordered" id="familyTable">
+								<tr>
+									<td>
+										Family relationship
+									</td>
+									<td>
+										Age
+									</td>
+									<td>
+										Ethnic Origin
+									</td>
+									<td>
+										Height
+									</td>
+									<td>
+										Weight
+									</td>
+									<td>
+										Hair Color 
+									</td>
+									<td>
+										Eye Color
+									</td>
+									<td>
+										Health Status
+									</td>
+									<td>
+										Deceased age
+									</td>
+									<td>
+										decease Cause
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" class="form-control" name="memberRelation" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="age" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="ethnicOrigin" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="height" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="weight" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="eyeColor" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="hairColor" />
+									</td>
+									<td>
+										<select class="form-control" name="healthStatus">
+											<option></option>
+											<option value="Excellent">Excellent</option>
+											<option value="Good">Good</option>
+											<option value="Fair">Fair</option>
+											<option value="Poor">Poor</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseAge" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseReson" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" class="form-control" name="memberRelation" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="age" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="ethnicOrigin" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="height" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="weight" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="eyeColor" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="hairColor" />
+									</td>
+									<td>
+										<select class="form-control" name="healthStatus">
+											<option></option>
+											<option value="Excellent">Excellent</option>
+											<option value="Good">Good</option>
+											<option value="Fair">Fair</option>
+											<option value="Poor">Poor</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseAge" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseReson" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" class="form-control" name="memberRelation" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="age" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="ethnicOrigin" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="height" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="weight" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="eyeColor" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="hairColor" />
+									</td>
+									<td>
+										<select class="form-control" name="healthStatus">
+											<option></option>
+											<option value="Excellent">Excellent</option>
+											<option value="Good">Good</option>
+											<option value="Fair">Fair</option>
+											<option value="Poor">Poor</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseAge" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseReson" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" class="form-control" name="memberRelation" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="age" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="ethnicOrigin" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="height" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="weight" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="eyeColor" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="hairColor" />
+									</td>
+									<td>
+										<select class="form-control" name="healthStatus">
+											<option></option>
+											<option value="Excellent">Excellent</option>
+											<option value="Good">Good</option>
+											<option value="Fair">Fair</option>
+											<option value="Poor">Poor</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseAge" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseReson" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" class="form-control" name="memberRelation" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="age" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="ethnicOrigin" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="height" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="weight" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="eyeColor" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="hairColor" />
+									</td>
+									<td>
+										<select class="form-control" name="healthStatus">
+											<option></option>
+											<option value="Excellent">Excellent</option>
+											<option value="Good">Good</option>
+											<option value="Fair">Fair</option>
+											<option value="Poor">Poor</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseAge" />
+									</td>
+									<td>
+										<input type="text" class="form-control" name="deceaseReson" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							<button class="btn btn-default" type="button" onclick="switchProgressBar('75%');switchDisplayState('part6Div','part7Div');">Previous</button>
+							<button class="btn btn-primary" type="submit">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		
+			<div id="part8Div" style="display: none;">
+				<legend>8 Photo upload</legend>
+		        <form  id="part8Form" data-callback="switchProgressBar('100%');"
+		        class="form-horizontal garsiFileForm" target="uploadIframe" method="post" action="api/egg/attachment/" data-resourceId="resourceId" enctype="multipart/form-data">
+					<input type="hidden" name="resourceId" id="resourceId" /> 
+					<div class="form-group">
+						<div class="col-sm-12" id="photoShow">
+						
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="col-sm-4 control-label"></label>
+						<div class="col-sm-5">
+							<input type="file" name="file" id="eggFile" accept=".jpg,.png,.bmp,.gif,.jpeg"/>
+						</div>
+					</div>
+					<div class="row form-grid">
+						<div class="col-sm-12 text-right">
+							<button class="btn btn-default" type="button" onclick="switchProgressBar('87.5%');switchDisplayState('part7Div','part8Div');">Previous</button>
+							<button class="btn btn-primary" type="submit">SUBMIT PHOTO</button>
+							<a class="btn btn-success" data-refresh="content"
+							 href="views/app/content/eggService/retrieval/index.html">Finish</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function($) {
+	$("#add").bind("click",addOption);
+	$("#del").bind("click",delOption);
+	if($("#donationTable").find("tr").length>4){
+		$("#del").removeAttr("disabled");
+	}else{
+		$("#del").attr("disabled","disabled");
+	}
+	
+	if($(document.body).data("contentPage")){
+		var param = $(document.body).data("contentPage");
+		$.ajax({
+			type : "GET",
+			url : "api/egg/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				if(!$.isEmptyObject(json)){
+					$("#part1Form").removeAttr("method").attr("method","PUT");
+					$("#part1Form").find(":input[name='id']").val(param.id);
+					fillForm(json,$("#part1Div"));
+				}
+			}
+		});
+		$.ajax({
+			type : "GET",
+			url : "api/egg/donateask/list/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				if(!$.isEmptyObject(json)){
+					$("#part2Form").removeAttr("method").attr("method","PUT");
+					$("#part2Form").append("<input type='hidden' name='askId'/>");
+					
+					fillForm(json[0],$("#part2Div"));
+					if(json[0].donateRecordList){
+						var donateRecordList = json[0].donateRecordList;
+						if(donateRecordList.length>3){
+							for (var int = i; i < donateRecordList.length-3; i++) {
+								addOption();
+							}
+						}
+						$.each(donateRecordList,function(i,n){
+							$("#part2Form").find("input[name='askId']").val(n.askId);
+							$("#donationTable tr:eq("+ (i+1) +")").append("<input type='hidden' name='recordIds'/>");
+							fillForm(n,$("#donationTable tr:eq("+ (i+1) +")"));
+							$("#donationTable tr:eq("+ (i+1) +")").find("input[name='recordIds']").val(n.id);
+						});
+					}
+				}else{
+					$("#part2Form").find(":input[name='resourceId']").val(param.id);
+				}
+			}
+		});
+		$.ajax({
+			type : "GET",
+			url : "api/egg/edu/list/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				if(!$.isEmptyObject(json)){
+					$("#part3Form").removeAttr("method").attr("method","PUT");
+					$("#part3Form").append("<input type='hidden' name='id'/>");
+					fillForm(json[0],$("#part3Div"));
+				}else{
+					$("#part3Form").find(":input[name='resourceId']").val(param.id);
+				}
+			}
+		});
+		$.ajax({
+			type : "GET",
+			url : "api/egg/character/list/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				if(!$.isEmptyObject(json)){
+					$("#part4Form").removeAttr("method").attr("method","PUT");
+					$("#part4Form").append("<input type='hidden' name='id'/>");
+					fillForm(json[0],$("#part4Div"));
+				}else{
+					$("#part4Form").find(":input[name='resourceId']").val(param.id);
+				}
+			}
+		});
+		$.ajax({
+			type : "GET",
+			url : "api/egg/reproductive/list/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				if(!$.isEmptyObject(json)){
+					$("#part5Form").removeAttr("method").attr("method","PUT");
+					$("#part5Form").append("<input type='hidden' name='id'/>");
+					fillForm(json[0],$("#part5Div"));
+				}else{
+					$("#part5Form").find(":input[name='resourceId']").val(param.id);
+				}
+			}
+		});
+		$.ajax({
+			type : "GET",
+			url : "api/egg/healhistory/list/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				if(!$.isEmptyObject(json)){
+					$("#part6Form").removeAttr("method").attr("method","PUT");
+					$("#part6Form").append("<input type='hidden' name='id'/>");
+					fillForm(json[0],$("#part6Div"));
+				}else{
+					$("#part6Form").find(":input[name='resourceId']").val(param.id);
+				}
+			}
+		});
+		$.ajax({
+			type : "GET",
+			url : "api/egg/familyhistory/list/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				if(!$.isEmptyObject(json)){
+					$("#part7Form").removeAttr("method").attr("method","PUT");
+					$("#part7Form").append("<input type='hidden' name='familyHistoryId'/>");
+					fillForm(json[0],$("#part7Div"));
+					if(json[0].familyMembers){
+						var familyMembers = json[0].familyMembers;
+						$.each(familyMembers,function(i,n){
+							$("#part7Form").find("input[name='familyHistoryId']").val(n.familyHistoryId);
+							$("#familyTable tr:eq("+ (i+1) +")").append("<input type='hidden' name='memberIds'/>");
+							fillForm(n,$("#familyTable tr:eq("+ (i+1) +")"));
+							$("#familyTable tr:eq("+ (i+1) +")").find("input[name='memberIds']").val(n.id);
+						});
+					}
+				}else{
+					$("#part7Form").find(":input[name='resourceId']").val(param.id);
+				}
+			}
+		});
+		$.ajax({
+			type : "GET",
+			url : "api/egg/attachment/"+param.id,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(json){
+				var str = "";
+				$("#resourceId").val(param.id);
+				$.each(json,function(i, n){
+					str+="<img class='upload-img' src='/api/blob/image/"+ n.contentId +"'/>";
+				});
+					
+				$("#part8Form").find("#photoShow").html(str);
+			}
+		});
+	}
+	
+	$("#eggFile").change(function(e){
+		//$("#photoShow").empty();
+		 var files = document.getElementById("eggFile").files;
+         if(files){
+        	 for (var i=0;i<files.length;i++) {
+        		 var reader = new FileReader();
+	             reader.readAsDataURL(files[i]);
+	             reader.onload=function(){
+                    $("<span><img class='upload-img' src='"+this.result+"'/><span>").appendTo("#photoShow");
+	             }
+			}
+         }
+	});
+});
+
+function addOption(){
+	var newOpt = $("#del").parent().parent().clone();
+	newOpt.find(":input").val("");
+	newOpt.find("button").remove();
+	$("#del").parent().parent().before(newOpt);
+	if($("#donationTable").find("tr").length>=4){
+		$("#del").removeAttr("disabled");
+	}
+	changeTdTitle();
+}
+
+function delOption(){
+	var tr = $("#del").parent().parent().prev();
+	tr.remove();
+	if($("#donationTable").find("tr").length<5 ){
+		$("#del").attr("disabled","disabled");
+	}
+	changeTdTitle();
+}
+
+function changeTdTitle(){
+	var index = $("#donationTable").find("tr").length;
+	$("#donationTable tr:last-child").find("td:first-child").html((index-1)+" Donation");
+}
+</script>
+

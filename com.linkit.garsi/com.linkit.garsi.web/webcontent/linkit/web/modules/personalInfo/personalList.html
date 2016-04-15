@@ -1,0 +1,53 @@
+<br>
+<div class="block-feature">
+	<div class="bs-example container" data-example-id="simple-table">
+		<h4>人员信息列表{{pageSize}}</h4>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>人员UM编号</th>
+					<th>姓名</th>
+					<th>身份证号码</th>
+					<th>所属团队</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in users.list">
+					<th scope="row">{{$index+1}}</th>
+					<td>{{user.number}}</td>
+					<td>{{user.username}}</td>
+					<td>{{user.code}}</td>
+					<td>{{user.group}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="container" data-example-id="simple-table">
+		<div class="row">
+			<div class="col-xs-8 col-sm-6">
+				<div class="pull-left"><br>当前第 1 页，总共 {{users.pageSize}} 页</div>
+			</div>
+			<div class="col-xs-8 col-sm-6">
+				<ul class="pagination pull-right">
+					<li>
+						<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li>
+						<a href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>

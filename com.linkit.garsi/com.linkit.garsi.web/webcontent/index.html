@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="images/favicon.ico" rel="icon">
+	<meta http-equiv="Cache-Control" content="no-store">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<title>GARSI</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-ui/css/weixin/jquery-ui-1.10.3.custom.min.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/fontawesome/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-datatable/css/jquery.dataTables_themeroller.css"/>
+	<link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-select2/select2.css"/>
+	<link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-select2/select2-bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-message/jquery.message.css"/>
+	<link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+	<link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-allfineuploader/fineuploader-4.1.0.min.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="scripts/html5shiv.min.js"></script>
+	<script src="scripts/respond.min.js"></script>
+	<![endif]-->
+	
+	<!-- 自定义全局变量 -->
+	<script type="text/javascript">
+	var pathName=window.document.location.pathname;
+	var projectName=pathName.substring(0,pathName.substr(1).indexOf("/")+1);
+	document.rootURI=projectName+"/";
+	</script>
+</head>
+<body>
+	<div id="main"></div>
+	<!-- 基础依赖-->
+	<script src="scripts/jquery/jquery-1.9.1.min.js"></script>
+	<script src="scripts/jquery/jquery-utils/jquery.json-2.3.js"></script>
+	<script src="scripts/jquery/jquery-utils/jquery.cookie.js"></script>
+	<script src="scripts/jquery/jquery-utils/jquery.timers.js"></script>
+	<script src="scripts/jquery/jquery-md5/jquery.md5.js"></script>
+	<script src="scripts/jquery/jquery-message/jquery.message.js"></script>
+	<script src="scripts/jquery/jquery-address/jquery.address-1.6.min.js"></script>
+	
+	<!-- 表单 -->
+	<script src="scripts/jquery/jquery-validation/lib/jquery.form.js"></script>
+	<script src="scripts/jquery/jquery-validation/jquery.validate.min.js"></script>
+	<script src="scripts/jquery/jquery-validation/additional-methods.min.js"></script>
+	
+	<!-- 布局 -->
+	<script src="css/bootstrap/js/bootstrap.min.js"></script>
+	<script src="scripts/jquery/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+	
+	<!-- jquery组件 -->
+	<script src="scripts/jquery/jquery-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="scripts/jquery/jquery-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script src="scripts/jquery/jquery-select2/select2.min.js"></script>
+	<script src="scripts/jquery/jquery-select2/i18n/select2_locale_zh-CN.js"></script>
+	<script src="scripts/jquery/jquery-datatable/js/jquery.dataTables.min.js"></script>
+	<script src="scripts/jquery/jquery-datatable/plugins/jquery.dataTables.plugins.js"></script>
+	<script src="scripts/jquery/jquery-datatable/plugins/jquery.dataTables.rowGrouping.js"></script>
+	<script src="scripts/jquery/jquery-nicescroll/jquery.nicescroll.min.js"></script>
+	<script src="scripts/jquery/jquery-allfineuploader/all.fineuploader-4.1.0.min.js"></script>
+	<script src="scripts/jquery/jquery.PrintArea.js"></script>
+	<script src="scripts/jquery/jquery-loader/jquery.loader.js"></script>
+	
+	<!-- 非jquery插件 -->
+	<script src="scripts/date.format.js"></script>
+	<script src="scripts/date.parse.js"></script>
+	<script src="scripts/xml2json.js"></script>
+	<script src="scripts/unitData.js"></script>
+	
+	<!-- 初始化  -->
+	<script src="scripts/init.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			
+			if($.cookie("garsiCookieSession")==null){
+				loadView("login.html","main");
+			}else{
+				loadView("main.html","main");
+			}
+			
+			if($.cookie("garsiLock")=="1"){
+				openModal("views/commons/lock.html","myModal");
+			}
+			
+		});
+	</script>
+	<script type="text/template" id="qq-template">
+	<div class="qq-uploader-selector qq-uploader">
+	    <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+	        <span>Drop files here to upload</span>
+	    </div>
+	    <div class="qq-upload-button-selector qq-upload-button btn btn-success">
+	        <div><i class="icon-file icon-white"></i> Please select a file</div>
+	    </div>&nbsp;<button type="button" class="btn btn-default" id="triggerUpload"><i class="icon-upload"></i> Upload</button>
+	    <span class="qq-drop-processing-selector qq-drop-processing">
+	        <span>Processing dropped files...</span>
+	        <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+	    </span>
+	    <ul class="qq-upload-list-selector qq-upload-list">
+	        <li>
+	            <div class="qq-progress-bar-container-selector">
+	                <div class="qq-progress-bar-selector qq-progress-bar"></div>
+	            </div>
+	            <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+	            <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+	            <span class="qq-upload-file-selector qq-upload-file"></span>
+	            <span class="qq-upload-size-selector qq-upload-size"></span>
+	            <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+	            <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
+	            <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
+	            <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+	        </li>
+	    </ul>
+	</div>
+	</script>
+	<iframe id="uploadIframe" name="uploadIframe" style='display:none'></iframe>
+</body>
+</html>

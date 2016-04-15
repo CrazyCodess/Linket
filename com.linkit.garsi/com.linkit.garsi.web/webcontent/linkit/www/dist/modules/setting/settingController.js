@@ -1,0 +1,2 @@
+/*! ross */
+"use strict";angular.module("SettingControllers",[]).controller("SettingController",["$scope","$ionicModal","$timeout",function(a,b,c){a.loginData={},b.fromTemplateUrl("modules/setting/login.html",{scope:a}).then(function(b){a.modal=b}),a.closeLogin=function(){a.modal.hide()},a.login=function(){a.modal.show()},a.doLogin=function(){console.log("Doing login",a.loginData),c(function(){a.closeLogin()},1e4)}}]);

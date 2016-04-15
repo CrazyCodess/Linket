@@ -1,0 +1,13 @@
+2015-07-23 23:31:17,637 INFO  [ClassPathXmlApplicationContext] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3abfe836: startup date [Thu Jul 23 23:31:17 CST 2015]; root of context hierarchy
+2015-07-23 23:31:17,731 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from URL [file:/F:/codes/Linkit/org.polaris.framework/org.polaris.framework.common/target/classes/beanRefContext.xml]
+2015-07-23 23:31:18,074 INFO  [ClassPathXmlApplicationContext] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1e7c7811: startup date [Thu Jul 23 23:31:18 CST 2015]; root of context hierarchy
+2015-07-23 23:31:18,074 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.debug\target\classes\META-INF\spring\debug.xml]
+2015-07-23 23:31:18,247 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.debug\target\classes\META-INF\spring\server.xml]
+2015-07-23 23:31:18,278 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.debug\target\classes\META-INF\spring\station.xml]
+2015-07-23 23:31:18,325 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.common\target\classes\META-INF\spring\common-applicationcontext.xml]
+2015-07-23 23:31:18,403 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.authorize\target\classes\META-INF\spring\authorize-applicationcontext.xml]
+2015-07-23 23:31:18,434 INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from file [F:\codes\Linkit\org.polaris.framework\org.polaris.framework.webapp\org.polaris.framework.webapp.extjs\target\classes\META-INF\spring\extjs-applicationcontext.xml]
+2015-07-23 23:31:18,933 INFO  [Version] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-23 23:31:18,933 INFO  [Version] HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-23 23:31:18,933 INFO  [Environment] HHH000206: hibernate.properties not found
+2015-07-23 23:31:18,949 INFO  [Environment] HHH000021: Bytecode provider name : javassist

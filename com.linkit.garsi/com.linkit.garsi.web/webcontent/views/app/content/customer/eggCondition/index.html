@@ -1,0 +1,111 @@
+<script>
+	$(function($) {
+		$("#eggBankDataTable").dataTable({
+			aoColumns: [
+				{sTitle:"Serial No.",mDataProp:null,bSortable:false,sClass:"index",
+					fnRender:function(o,val) {
+            			return o.iDataRow+1;
+                	}
+				},
+            	
+            	{sTitle: "name",mDataProp:null,
+                	"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a></a>").
+							append("Anonymous").
+							attr("data-refresh","content").
+							attr("href","views/app/content/customer/eggCondition/detail.html?id="+oData.id);
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+            	},
+            	
+            	{sTitle: "Age",mDataProp:"age"},
+				
+				{sTitle: "Height(Feet)",mDataProp:"height"},
+                
+                {sTitle: "Weight(Pound)",mDataProp:"weight"},
+                
+                {sTitle: "Blood type",mDataProp:"bloodType"},
+                
+                {sTitle: "Status",mDataProp:"processState"},
+                
+                {sTitle: "Operation",mDataProp:null,sClass:"action",
+            		fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+    					var htmlf=$(nTd);
+    					var a=$("<a><i class='icon-check'></i></a>").
+    					attr("data-action","click").
+    					attr("data-confirmMessage","Are you sure you want to Selected it?").
+    					attr("data-callback","$(actionEvent.target).parents('.dataTable').dataTable().fnDeleteRow("+iRow+");").
+    					attr("data-toggle","tooltip").
+    					attr("title","Selected").
+    					attr("href","api/egg/selectResource?resourceId="+oData.id+"&processState=selected");
+    					htmlf.append(a);
+    					ajaxInterceptor(htmlf);
+    				}
+    			}
+	        ]
+		});
+	});
+	
+</script>
+
+<div class="row">
+	<div class="page-header">Egg donor selection criteria</div>
+	<div class="col-sm-12 page-body">
+		<div class="well page-search">
+			<form data-bindTable="eggBankDataTable" action="api/egg/list/freeEnableEgg" method="get">
+				<div class="row form-inline">
+					<div class="form-group">
+						<label for="control-label" class="control-label">Age:</label>
+						<input type="text" name="ageStart" id="minAge" maxlength="3" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="1" data-slider-max="100"></div>
+						<input type="text" name="ageEnd" id="maxAge" maxlength="3" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Height(Feet):</label>
+						<input type="text" name="heightStart" id="minHeight" maxlength="2" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="1" data-slider-max="20"></div>
+						<input type="text" name="heightEnd" id="maxHeight" maxlength="2" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Weight(Pound):</label>
+						<input type="text" name="weightStart" id="minHeight" maxlength="3" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="1" data-slider-max="999"></div>
+						<input type="text" name="weightEnd" id="maxHeight" maxlength="3" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<button title="Search" type="button" class="btn btn-primary" data-toggle="tooltip"><i class="icon-search"></i></button>
+						<button title="More conditions" type="button" class="btn btn-default showCriteria" data-toggle="tooltip"><i class="icon-retweet"></i></button>
+					</div>
+				</div>
+				<div class="moreCriteria form-grid-top">
+					<div class="row form-grid form-inline">
+						<div class="form-group">
+							<label for="control-label" class="control-label">Race:</label>
+							<select class="form-control" name="race">
+								<option></option>
+								<option value="Asian">Asian</option>
+								<option value="Native American">Native American</option>
+								<option value="African Descent">African Descent </option>
+								<option value="White/Caucasian">White/Caucasian</option>
+								<option value="Latino/Hispanic">Latino/Hispanic</option>
+								<option value="Multi-race">Multi-race</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="control-label" class="control-label">Nationality:</label>
+							<input type="text" class="form-control" name="nationality" />
+						</div>
+						<div class="form-group">
+							<label for="control-label" class="control-label">Occupation:</label>
+							<input type="text" class="form-control" name="occupation" />
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	    <table id="eggBankDataTable" class="searchDataTable"></table>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+行为爱好信息（CharacterInfo对象）操作
+=============================================================================
+添加教育信息时一定要传一个resourceId,和基本信息关联
+1. 添加对象
+接口地址：http://localhost:6001/api/egg/character
+请求方式：post
+请求参数
+{"resourceId":"2c9ba3814efcf81a014efd065df50002",
+"personality":"dfsfdsfsd",
+"hobby":"gaozhon",
+"talent":"nada",
+"favColor":"fdsf",
+"favSesson":"ys",
+"favMovie":"dfsf",
+"favCity":"dfsd",
+"favSong":"dsfsd",
+"childhood":"sdfdsf",
+"favFood":"面条",
+"futureGoal":"dsfdsffutureGoal"
+}
+
+返回结果：
+{"data":{"id":"2c9ba3814efe6f49014efe77d3b20000","personality":"dfsfdsfsd","hobby":"gaozhon","talent":"nada","favColor":"fdsf","favSesson":"ys","favMovie":"dfsf","favCity":"dfsd","favSong":"dsfsd","childhood":"sdfdsf","futureGoal":"dsfdsffutureGoal","createTime":"08/05/2015","updateTime":"08/05/2015","resourceId":"2c9ba3814efcf81a014efd065df50002"},"success":true,"errors":{}}
+
+=============================================================================
+2.获取一个CharacterInfo对象
+接口地址：http://localhost:6001/api/egg/character/402859814ef6163e014ef63166bf0004
+请求方式：get
+请求参数：402859814ef42f31014ef44058000000
+返回结果：{"id":"402859814ef6163e014ef63166bf0004","resourceId":"402859814ef42f31014ef44058000000","personality":"dfsfdsfsd","hobby":"gaozhon","talent":"nada","favColor":"fdsf","favSesson":"ys","favMovie":"dfsf","favCity":"dfsd","favSong":"dsfsd","childhood":"sdfdsf","futureGoal":"dsfdsffutureGoal","createTime":"04/08/2015","updateTime":"04/08/2015"}
+
+=============================================================================
+3. 更新对象
+接口地址：http://localhost:6001/api/egg/character
+请求方式：put
+请求参数
+{"id":"402859814ef6163e014ef63166bf0004",
+"resourceId":"402859814ef42f31014ef44058000000",
+"personality":"dfsfdsfsd",
+"hobby":"gaozhon",
+"talent":"nada",
+"favColor":"fdsf",
+"favSesson":"ys",
+"favMovie":"dfsf",
+"favCity":"dfsd",
+"favSong":"dsfsd",
+"childhood":"sdfdsf",
+"futureGoal":"dsfdsffutureGoal",
+"createTime":"04/08/2015",
+"updateTime":"04/08/2015"}
+返回结果：{"success":true,"errors":{}}
+
+=============================================================================
+4. 根据卵子ID获取行为爱好信息列表
+
+接口地址：http://localhost:6001/api/egg/character/list/402859814ef42f31014ef44058000000
+请求方式：get
+请求参数: 卵子ID->402859814ef42f31014ef44058000000
+返回结果：[{"id":"402859814ef6163e014ef63166bf0004","resourceId":"402859814ef42f31014ef44058000000","personality":"dfsfdsfsd","hobby":"gaozhon","talent":"nada","favColor":"fdsf","favSesson":"ys","favMovie":"dfsf","favCity":"dfsd","favSong":"dsfsd","childhood":"sdfdsf","futureGoal":"dsfdsffutureGoal","createTime":"04/08/2015","updateTime":"04/08/2015"},{"id":"402859814ef6163e014ef63117a70003","resourceId":"402859814ef42f31014ef44058000000","personality":"dfsfdsfsd","hobby":"gaozhon","talent":"nada","favColor":"fdsf","favSesson":"ys","favMovie":"dfsf","favCity":"dfsd","favSong":"dsfsd","childhood":"sdfdsf","futureGoal":"dsfdsffutureGoal","createTime":"04/08/2015","updateTime":"04/08/2015"}]
+
+=============================================================================
+5.删除一个行为爱好信息
+接口地址：http://localhost:6001/api/egg/character/402859814ef6163e014ef63166bf0004
+请求方式：delete
+请求参数: 主键id->402859814ef6163e014ef63166bf0004
+返回结果：{"success":true,"errors":{}}

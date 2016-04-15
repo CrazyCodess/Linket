@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install>
+	<!-- 角色定义 -->
+	<role name="surrogacy" remark="代母" writable="true" />
+	<role name="surrogacyReadonly" remark="只读代母" writable="false" />
+	<role name="egg" remark="卵子库" writable="true" />
+	<role name="eggReadonly" remark="只读卵子库" writable="false" />
+	<role name="sperm" remark="精子库" writable="true" />
+	<role name="doctor" remark="医生" writable="true" />
+	<role name="butler" remark="管家" writable="true" />
+	<role name="customer" remark="顾客" writable="true" />
+	<role name="translator" remark="翻译" writable="true" />
+	<role name="garsi" remark="Garsi" writable="true" />
+	<!-- 模块定义 -->
+	<module name="surrogacy" remark="代母" roles="surrogacy,surrogacyReadonly" />
+	<module name="egg" remark="卵子库" roles="egg,eggReadonly" />
+	<module name="customer" remark="顾客" roles="customer" />
+	<module name="garsi" remark="Garsi" roles="garsi" />
+	<!-- 用户定义 -->
+	<user name="garsi" remark="Garsi" roles="garsi,surrogacy,egg" />
+	<user name="surrogacy" remark="代母公司" roles="surrogacy" />
+	<user name="egg" remark="卵子公司" roles="egg" />
+	<user name="customer" remark="顾客" roles="customer,surrogacyReadonly,eggReadonly" />
+</install>

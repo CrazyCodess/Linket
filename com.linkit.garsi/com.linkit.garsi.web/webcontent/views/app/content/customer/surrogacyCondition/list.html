@@ -1,0 +1,59 @@
+<script type="text/javascript">
+	$(function($) {
+		$("#userDataTable").dataTable({
+			aoColumns: [
+				{sTitle:"Serial No.",mDataProp:null,bSortable:false,sClass:"index",
+					fnRender:function(o,val) {
+            			return o.iDataRow+1;
+                	}
+				},
+				
+				{sTitle: "ID",mDataProp:null,
+                	"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a></a>").
+							append(oData.ID).
+							attr("data-refresh","content").
+							attr("href","views/app/content/customer/surrogacyCondition/detail.html");
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+            	},
+				
+				{sTitle: "Age",mDataProp:"AGE"},
+                
+                {sTitle: "Nationality",mDataProp:"GUOJI"},
+                
+                {sTitle: "State",mDataProp:"STATUS"},
+            	
+            	{sTitle: "Operation",mDataProp:null,sClass:"action",
+            		fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a><i class='icon-retweet'></i></a>").
+						attr("data-popup","modal").
+						attr("data-toggle","tooltip").
+						attr("title","Confirm selection?").
+						attr("href","views/app/content/surrogacy/retrieval/state.html");
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+				}
+	        ]
+		});
+	});
+</script>
+
+<div class="row">
+	<div class="page-header">Surrogate selection criteria</div>
+	<div class="col-sm-12 page-body">
+		<div class="well page-search">
+			<div class="actions">
+				<a title="Export" href="views/app/content/setting/user/addOrEdit.html" class="btn btn-primary" data-popup="modal" data-toggle="tooltip"><i class="icon-share"></i></a>
+		    </div>
+			<form data-bindTable="userDataTable" action="views/app/content/customer/surrogacyCondition/data.json">
+				<div></div>	
+			</form>
+		</div>
+	    <table id="userDataTable" class="searchDataTable"></table>
+	</div>
+</div>

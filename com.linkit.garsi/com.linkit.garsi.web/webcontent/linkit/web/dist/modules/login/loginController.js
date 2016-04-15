@@ -1,0 +1,2 @@
+/*! ross */
+"use strict";angular.module("LoginControllers",["LoginServices"]).controller("loginController",["$scope","UserService",function(a,b){a.welcomeInfo="欢迎登录ROSS系统",a.users=b.query(),a.username="1231231231"}]);

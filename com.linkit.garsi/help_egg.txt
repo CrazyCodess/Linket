@@ -1,0 +1,91 @@
+
+Egg对象操作
+1. 添加对象
+接口地址：http://localhost:6001/api/egg/
+请求方式：post
+请求参数
+{  "age": 112,
+    "bloodType": "A",
+    "race": "dsf",
+    "ethnicOrigin": "fsfdsf",
+    "height": 19.3,
+    "weight": 12.1,
+    "skinTone": "sfsdfs",
+    "skinType": "safafsf",
+    "eyeColor": "fff",
+    "hairColor": "sfsdf",
+    "hairType": "sfdsfdsf",
+    "hairTexture": "fsfds",
+    "bodyType": "sffs",
+    "nativeTongue": "sfdfsf",
+    "maritalStatus": "sdfdsf",
+    "drive": "sfsdf",
+    "compenstation": "sfsdf",
+"bmi":"bmidsfsd",
+"birthdate":"05/20/2015"
+}
+返回结果：
+{"data":{"id":"4028c2cd4ef955b0014ef95d81ce0004","birthdate":"05/20/2015","age":112,"bloodType":"A","race":"dsf","ethnicOrigin":"fsfdsf","height":19.3,"weight":12.1,"bmi":"bmidsfsd","skinTone":"sfsdfs","skinType":"safafsf","eyeColor":"fff","hairColor":"sfsdf","hairType":"sfdsfdsf","hairTexture":"fsfds","bodyType":"sffs","nativeTongue":"sfdfsf","maritalStatus":"sdfdsf","drive":"sfsdf","compenstation":"sfsdf","createTime":"08/04/2015","updateTime":"08/04/2015","resourceType":"egg","title":"4028c2cd4ef955b0014ef95d81ce00042015-05-20 fsfdsf"},"success":true,"errors":{}}
+
+=============================================================================
+2.获取一个Egg对象
+接口地址：http://localhost:6001/api/egg/402859814ef42f31014ef44058000000
+请求方式：get
+请求参数：402859814ef42f31014ef44058000000
+返回结果：{"id":"402859814ef42f31014ef44058000000","fullName":"dioubi","age":112,"bloodType":"A","race":"dsf","ethnicOrigin":"fsfdsf","height":19.3,"weight":12.1,"skinTone":"sfsdfs","skinType":"safafsf","eyeColor":"fff","hairColor":"sfsdf","hairType":"sfdsfdsf","hairTexture":"fsfds","bodyType":"sffs","nativeTongue":"sfdfsf","maritalStatus":"sdfdsf","drive":"sfsdf","compenstation":"sfsdf","createTime":"03/08/2015","updateTime":"03/08/2015"}
+
+=============================================================================
+3. 更新对象
+接口地址：http://localhost:6001/api/egg/
+请求方式：put
+请求参数
+{
+    "id":"402859814ef42f31014ef44058000000",
+ "age": 112,
+    "bloodType": "A",
+    "race": "dsf",
+    "ethnicOrigin": "fsfdsf",
+    "height": 19.3,
+    "weight": 12.1,
+    "skinTone": "sfsdfs",
+    "skinType": "safafsf",
+    "eyeColor": "fff",
+    "hairColor": "sfsdf",
+    "hairType": "sfdsfdsf",
+    "hairTexture": "fsfds",
+    "bodyType": "sffs",
+    "nativeTongue": "sfdfsf",
+    "maritalStatus": "sdfdsf",
+    "drive": "sfsdf",
+    "compenstation": "sfsdf",
+"bmi":"bmidsfsd",
+"birthdate":"05/20/2015"
+}
+返回结果：{"success":true,"errors":{}}
+
+=============================================================================
+4.删除一个Egg对象
+接口地址：http://localhost:6001/api/egg/402859814ef42f31014ef44058000000
+请求方式：delete
+请求参数：402859814ef42f31014ef44058000000
+返回结果：{"success":true,"errors":{}}
+
+=============================================================================
+5.分页查询Egg对象
+接口地址：localhost:6001/api/egg?ageStart=12&ageEnd=120&occupation=dsfsd&start=0&limit=10
+请求方式：get
+请求参数：ageStart=12&ageEnd=120&occupation=dsfsd&start=1&limit=10
+返回结果：{"total":1,"results":[{"id":"2c9ba3814efcf81a014efd065df50002","birthdate":"2015-05-20","age":132,"bloodType":"A","race":"dsf","ethnicOrigin":"fsfdsf","height":19.3,"weight":12.1,"bmi":"bmidsfsd","skinTone":"sfsdfs","skinType":"safafsf","eyeColor":"fff","hairColor":"sfsdf","hairType":"sfdsfdsf","hairTexture":"fsfds","bodyType":"sffs","nativeTongue":"sfdfsf","maritalStatus":"sdfdsf","drive":"sfsdf","compenstation":"sfsdf","createTime":"05/20/2015","updateTime":"08/05/2015","processState":"free","title":"2c9ba3814efcf81a014efd065df500022015-05-20 fsfdsf","resourceType":"egg"}]}
+
+1只查询free状态的：http://localhost:6001/api/egg/list/customer
+2只查询用户选择的:http://localhost:6001/api/egg/list/myEgg
+3只查询所有的记录:http://localhost:6001/api/egg
+
+
+选中一条记录
+http://localhost:6001/api/surrogacy/selectResource
+
+请求参数：
+resourceId=2c9ba3814efcf81a014efcfef27e0000&resourceState=enabled&processState=freed
+
+返回结果：{"success":true,"errors":{}}

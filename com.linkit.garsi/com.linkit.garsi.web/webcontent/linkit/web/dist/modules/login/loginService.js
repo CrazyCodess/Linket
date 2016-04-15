@@ -1,0 +1,2 @@
+/*! ross */
+"use strict";angular.module("LoginServices",["ngResource","commonServices"]).factory("UserService",["$resource","configData",function(a,b){var c=b.basePath+"data/login/login.json";return a(c,{},{})}]);

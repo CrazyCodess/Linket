@@ -1,0 +1,819 @@
+<div class="row">
+	<div class="page-header">Surrogate Detail</div>
+	<div class="page-body">
+		<div class="col-sm-12">
+				<ul class="nav nav-tabs form-nav" role="tablist">
+				    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Personal Information</a></li>
+				    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Medical/Genetic Information</a></li>
+				    <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Education/Employment/Lifestyle</a></li>
+				    <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Characteristics and Matters of Surrogacy</a></li>
+					<li role="presentation"><a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">Photo upload</a></li>
+				</ul>
+				
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="tab1">
+					<table class="table table-bordered">
+						<!-- <tr>
+							<th class="tr50">
+								1. Name(s) First/Middle/Last/Maiden:
+							</th>
+							<td class="tr50">
+								<span data-value="name"></span>
+							</td>
+						</tr> -->
+						<tr>
+							<th class="tr50">
+								2. Birthdate:
+							</th>
+							<td class="tr50">
+								<span data-value="birthdate" data-date-format="mm/dd/yyyy"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								2.1. Age:
+							</th>
+							<td>
+								<span data-value="age"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								3. Height:
+							</th>
+							<td>
+								<span data-value="height"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								4. Weight:
+							</th>
+							<td>
+								<span data-value="weight"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								4.1. BMI:
+							</th>
+							<td>
+								<span data-value="BMI"></span>
+							</td>
+						</tr>
+						<!-- <tr>
+							<th>
+								5. Contact information, phone:
+							</th>
+							<td>
+								<span data-value="phone"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								5.1. email address:
+							</th>
+							<td>
+								<span data-value="email"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								5.2. SkypeID:
+							</th>
+							<td>
+								<span data-value="skypeID"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								5.3. Street address:
+							</th>
+							<td>
+								<span data-value="streetAddress"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								5.4. City:
+							</th>
+							<td>
+								<span data-value="city"></span>
+							</td>
+						</tr>-->
+						<tr>
+							<th>
+								5.5. State:
+							</th>
+							<td>
+								<span data-value="state"></span>
+							</td>
+						</tr>
+						<!-- <tr>
+							<th>
+								5.6. Zip Code:
+							</th>
+							<td>
+								<span data-value="zipCode"></span>
+							</td>
+						</tr> -->
+						<tr>
+							<th>
+								6. Occupation:
+							</th>
+							<td>
+								<span data-value="occupation"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>7. Been a Surrogate Before:</th>
+							<td>
+								<span data-value="beenASurrogateBefore"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8. Married:</th>
+							<td>
+								<span data-value="married"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8.1. Relationship Status:</th>
+							<td>
+								<span data-value="relationshipStatus"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8.2. How Long:</th>
+							<td>
+								<span data-value="howLong"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>9. Spouse/Partner's Occupation:</th>
+							<td>
+								<span data-value="spouseOccupation"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>10. Ethnicity:</th>
+							<td>
+								<span data-value="ethnicity"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>10.1. Citizenship:</th>
+							<td>
+								<span data-value="citizenship"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11. Race/National Origin:</th>
+							<td>
+								<span data-value="nationalOrigin"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>12. Parent's Ancestry:</th>
+							<td>
+								<table class="table table-bordered">
+									<tr>
+										<td>
+										Father's Mother:
+										<span data-value="fathersMotherAncestry"></span>
+										</td>
+										<td>
+										Father's Father:
+										<span data-value="fathersFatherAncestry"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											Mother's Mother:
+											<span data-value="mothersMotherAncestry"></span>
+										</td>
+										<td>
+											Mother's Father:
+											<span data-value="mothersFatherAncestry"></span>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th>13. Children and Past Pregnancy Information:</th>
+							<td>
+								<span data-value="childrenInfo"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>14. Religion at Birth:</th>
+							<td>
+								<span data-value="religionAtBirth"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>15. Practicing Religion:</th>
+							<td>
+								<span data-value="practicingReligion"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>16. Have you received any tattoos in the last year?</th>
+							<td>
+								<span data-value="haveTattoos"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>17. Number of tattoos and date of last tattoo:</th>
+							<td>
+								<span data-value="numberOfTattoos"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>18. Have you received any piercings in the last year?</th>
+							<td>
+								<span data-value="havePiercings"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>19. Number of piercings and date of last piercing?</th>
+							<td>
+								<span data-value="numberOfPiercings"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>20. Other distinguishing features: </th>
+							<td>
+								<span data-value="otherFeatures"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>21. Date of Marriage:</th>
+							<td>
+								<span data-value="dateOfMarriage"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>22. Number of Divorces:</th>
+							<td>
+								<span data-value="numberOfDivorces"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>23. Date(s) of Divorce(s):</th>
+							<td>
+								<span data-value="dateOfDivorce"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>23.1. Years in current relationship:</th>
+							<td>
+								<span data-value="yearInRelationship"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>23.2 Do you live with your current partner?</th>
+							<td>
+								<span data-value="liveWithPartner"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>23.3. Is your partner the father of your children?</th>
+							<td>
+								<span data-value="isPartnerChildrensFather"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>23.4. Are all of your biological children in your physical custody?</th>
+							<td>
+								<span data-value="allChildrenInCustody"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>24. Filed for bankruptcy?</th>
+							<td>
+								<span data-value="filedForBankruptcy"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>25. Been in a psychiatric facility?</th>
+							<td>
+								<span data-value="psychiatricFacility"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>26. Been arrested?</th>
+							<td>
+								<span data-value="beenArrested"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>27. Been involved in any legal cases, or any that are pending?</th>
+							<td>
+								<span data-value="beenInvolved"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>27.1 Have any existing restraining orders on file?</th>
+							<td>
+								<span data-value="existingRestrainingOrders"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>28. Been in a substance abuse program?</th>
+							<td>
+								<span data-value="inSubstanceAbuseProgram"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>29. Do you drive?</th>
+							<td>
+								<span data-value="drive"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>30. Do you own a car or have reliable transportation?</th>
+							<td>
+								<span data-value="ownCar"></span>
+							</td>
+						</tr>
+					</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab2">
+					<table class="table table-bordered">
+						<tr>
+							<th class="tr50">1. Were you adopted?</th>
+							<td class="tr50">
+								<span data-value="adopted"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>2. Blood Type:</th>
+							<td>
+								<span data-value="bloodType"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>3. Sexual Orientation:</th>
+							<td>
+								<span data-value="sexualOrientation"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>4. Number of Pregnancies:</th>
+							<td>
+								<span data-value="numberOfPregnancies"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>5. Date of last OB/GYN visit:</th>
+							<td>
+								<span data-value="dateOfLastOBVisit" data-date-format="mm/dd/yyyy"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>6. Date of last Pap Smear:</th>
+							<td>
+								<span data-value="dateOfLastPapSmear" data-date-format="mm/dd/yyyy"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>7. Has your weight changed dramatically in the last five years for reasons other than pregnancy?</th>
+							<td>
+								<span data-value="weightChanged"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8. Are you using birth control?</th>
+							<td>
+								<span data-value="usingBirthControl"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8.1. What Method?</th>
+							<td>
+								<span data-value="whatMethod"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8.2. For how long?</th>
+							<td>
+								<span data-value="forHowLong"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8.3. Any complications experienced with this or any other birth control method?</th>
+							<td>
+								<span data-value="anyOtherBirthControlMethod"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>9. Do you or your partner/husband smoke?</th>
+							<td>
+								<span data-value="smoke"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>10. Do you drink alcoholic beverages?</th>
+							<td>
+								<span data-value="drink"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11. Have you ever used illicit drugs?</th>
+							<td>
+								<span data-value="everIllicitDrugs"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11.1. Are you currently using illicit drugs?</th>
+							<td>
+								<span data-value="currentlyIllicitDrugs"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11.2. Please list any recreational drugs (“street” or prescription) that you have experimented with in the past and the extent of your use?</th>
+							<td>
+								<span data-value="listDrugs"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>12. Do you have regular monthly menstrual cycles?</th>
+							<td>
+								<span data-value="regularMonthlyMenstrualCycles"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>12.1. Please provide details:</th>
+							<td>
+								<span data-value="details"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>13. Has anyone in your family had difficulty achieving pregnancy?</th>
+							<td>
+								<span data-value="difficultyPregnancy"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>14. Are there twins or triplets in your family?</th>
+							<td>
+								<span data-value="twinsTriplets"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>15. Have you or any of your partners ever had a blood transfusion?</th>
+							<td>
+								<span data-value="hadTransfusion"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>16. Have you or your partner ever had any psychological counseling (including marriage counseling)?</th>
+							<td>
+								<span data-value="hadAnyPsychologicalCounseling"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>16.1. Been prescribed medication to treat a behavioral or psychological condition?</th>
+							<td>
+								<span data-value="prescribedMedicationTreatBehavioralCondition"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>16.2. Been diagnosed with a psychological disorder or learning disability? </th>
+							<td>
+								<span data-value="diagnosedWithPsychologicalDisorder"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>17. Have you or your partner ever been hospitalized for psychiatric illness?</th>
+							<td>
+								<span data-value="hospitalizedFoPsychiatricIllness"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>18. Are you currently sexually active with anyone other than your partner listed on this application?</th>
+							<td>
+								<span data-value="sexuallyActiveWithAnyoneOther"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>19. Have you ever been physically abused?</th>
+							<td>
+								<span data-value="physicallyAbused"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>20. Have you ever been sexually abused?</th>
+							<td>
+								<span data-value="sexuallyAbused"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>21. Have you ever had thoughts or attempted suicide?</th>
+							<td>
+								<span data-value="thoughtsAttemptedSuicide"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>22. Please describe any medical problems you may have/had:</th>
+							<td>
+								<span data-value="medicalProblems"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>22.1. Please list any medications and dosage you are currently taking:</th>
+							<td>
+								<span data-value="medicationsAndDosageCurrently"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>22.2. Please list all other prescription medication and dosage taken over the last year and reason for taking:</th>
+							<td>
+								<span data-value="medicationAndDosageLastYearAndReason"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>22.3. Please list any hospitalizations, surgeries, or plastic surgeries you have had and the dates each event occurred:</th>
+							<td>
+								<span data-value="hospitalizationsSurgeriesPlasticSurgeries"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>23. Have you or your husband or partner or any past sexual partners ever been diagnosed with HIV or AIDS?</th>
+							<td>
+								<span data-value="HIVOrAIDS"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>24. Have you or your husband or partner or any past sexual partners ever been diagnosed with the following:</th>
+							<td>
+								<table class="table table-bordered">
+									<tr>
+										<td width="40%">AAAA</td>
+										<td width="60%">
+											<span data-value="diagnosedWithTheFollowing1"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>BBBB</td>
+										<td>
+											<span data-value="diagnosedWithTheFollowing2"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>CCCC</td>
+										<td>
+											<span data-value="diagnosedWithTheFollowing3"></span>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th>24.1: If yes, please explain any treatments and when was the diagnosis.</th>
+							<td>
+								<span data-value="explainAnyTreatments"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>26:  When were you last tested for sexually transmitted diseases (STDs)?</th>
+							<td>
+								<span data-value="lastTestedForSTDs"></span>
+							</td>
+						</tr>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab3">
+					<table class="table table-bordered">
+						<tr>
+							<th class="tr50">1. Current employment position:</th>
+							<td class="tr50">
+								<span data-value="currentEmploymentPosition"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>2. What were your best subjects in school?</th>
+							<td>
+								<span data-value="bestSubjectsInSchool"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>3. Please indicate highest level of school completed:</th>
+							<td>
+								<span data-value="highestLevelOfSchoolCompleted"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>4. Do you have plans on furthering your education?</th>
+							<td>
+								<span data-value="plansOnFurthering"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>5. What are your goals in life?</th>
+							<td>
+								<span data-value="goals"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>6. Do you have health insurance?</th>
+							<td>
+								<span data-value="healthInsurance"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>7. Can you speak any language other than English?</th>
+							<td>
+								<span data-value="languageOtherThanEnglish"></span>
+							</td>
+						</tr>
+					</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab4">
+					<table class="table table-bordered">
+						<tr>
+							<th class="tr50">1. Please describe your personality and character</th>
+							<td class="tr50">
+								<span data-value="personalityAndCharacter"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>2. What are your hobbies, interests and talents?</th>
+							<td>
+								<span data-value="hobbies"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>3. What do you like to do in your spare time?</th>
+							<td>
+								<span data-value="doInSpareTime"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>4. What is your philosophy on life?</th>
+							<td>
+								<span data-value="philosophyOnLife"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>5. Why do you want to be a Surrogate?</th>
+							<td>
+								<span data-value="whyWantToBeSurrogate"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>6. Briefly explain your understanding about how the Surrogate program works?</th>
+							<td>
+								<span data-value="howTheSurrogateProgramWorks"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>7. What do you plan to tell your children about you being a Surrogate?</th>
+							<td>
+								<span data-value="tellYourChildrenAboutSurrogate"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8. What qualities would you consider most important in choosing a Recipient Couple?</th>
+							<td>
+								<span data-value="mostImportantQualities"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>9. What relationship do you want with the Intended Parents during conception and pregnancy?</th>
+							<td>
+								<span data-value="relationshipWithIntendedParents"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>10. Would you like to meet the Recipient Couple?</th>
+							<td>
+								<span data-value="wantToMeetRecipientCouple"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11. What is the maximum number of embryos you are willing to have transferred to you?</th>
+							<td>
+								<span data-value="maximumNumberOfEmbryos"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11.1. Are you willing to carry twins?</th>
+							<td>
+								<span data-value="carryTwins"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11.2. Triplets?</th>
+							<td>
+								<span data-value="carryTriplets"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>12. Would you undergo a selective reduction procedure if a multiple pregnancy is confirmed?</th>
+							<td>
+								<span data-value="undergoSelectiveReductionProcedure"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>13. If there is a medical problem with the pregnancy, or (for any physical or genetic abnormalities) with the child you are carrying as a surrogate and the Intended Parents want to consider abortion, would you allow them to make that decision based on the advice of their physician and personal beliefs?</th>
+							<td>
+								<span data-value="allowThemMakeDecision"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>14. Do you and your partner understand that, unless you have had a tubal ligation or your partner has had a vasectomy, you must agree to abstain from sexual activity while undergoing medical treatment and participating in this program?</th>
+							<td>
+								<span data-value="understandThat"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>15. Do you have surrounding family and do you have their support in this matter?</th>
+							<td>
+								<span data-value="haveSurroundingFamilyAndHaveTheirSupport"></span>
+							</td>
+						</tr>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab5">
+						<div class="form-group" style="padding-left:130px;" id="photoShow">
+							
+						</div>
+					</div>
+				</div>
+				<div class="row form-grid">
+					<div class="col-sm-12 text-right">
+						<a class="btn btn-default" href="javascript:void(0);" onclick="history.back();">Cancel</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function($) {
+		if($(document.body).data("contentPage")){
+			var param = $(document.body).data("contentPage");
+			$.ajax({
+				type : "GET",
+				url : "api/surrogacy/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					if(json.success==true){
+						fillDetail(json.data,$("#tab1"));
+					}
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/surrogacy/medicalInfo/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					if(json.success==true){
+						fillDetail(json.data,$("#tab2"));
+					}
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/surrogacy/lifeStyle/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					if(json.success==true){
+						fillDetail(json.data,$("#tab3"));
+					}
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/surrogacy/characteristics/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					if(json.success==true){
+						fillDetail(json.data,$("#tab4"));
+					}
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/surrogacy/attachment/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					var str = "";
+					$.each(json,function(i, n){
+						str+="<img class='upload-img' src='/api/blob/image/"+ n.contentId +"'/>";
+					});
+						
+					$("#photoShow").html(str);
+				}
+			});
+		}
+	});
+</script>

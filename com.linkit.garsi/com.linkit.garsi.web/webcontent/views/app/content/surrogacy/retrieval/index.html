@@ -1,0 +1,121 @@
+<script>
+	$(function($) {
+		$("#surrogateSearchDataTable").dataTable({
+			aoColumns: [
+				{sTitle:"Serial No.",mDataProp:null,bSortable:false,sClass:"index",
+					fnRender:function(o,val) {
+            			return o.iDataRow+1;
+                	}
+				},
+				
+				{sTitle: "Name",mDataProp:null,
+                	"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a></a>").
+							append(oData.firstName+" "+oData.middleName+" "+oData.lastName).
+							attr("data-refresh","content").
+							attr("href","views/app/content/surrogacy/retrieval/detail.html?id="+oData.id);
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+            	},
+				
+                {sTitle: "Age",mDataProp:"age"},
+                
+                {sTitle: "Height(Feet)",mDataProp:"height"},
+                
+                {sTitle: "Weight(Pound)",mDataProp:"weight"},
+                
+                {sTitle: "Status",mDataProp:"resourceState"},
+                
+            	{sTitle: "Operation",mDataProp:null,sClass:"action",
+            		"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+            			var htmlf=$(nTd);
+						var a=$("<a><i class='icon-retweet'></i></a>").
+						attr("data-popup","modal").
+						attr("data-toggle","tooltip").
+						attr("title","Modified state").
+						attr("href","views/app/content/surrogacy/retrieval/state.html?id="+oData.id+"&state="+oData.resourceState);
+						htmlf.append(a);
+						a=$("<a><i class='icon-edit'></i></a>").
+						attr("data-refresh","content").
+						attr("data-toggle","tooltip").
+						attr("title","edit").
+						attr("href","views/app/content/surrogacy/upload/index.html?id="+oData.id);
+						htmlf.append(a);
+						a=$("<a><i class='icon-remove'></i></a>").
+						attr("data-action","click").
+						attr("data-method","DELETE").
+						attr("data-confirmMessage","Are you sure you want to delete it?").
+						attr("data-callback","$(actionEvent.target).parents('.dataTable').dataTable().fnDeleteRow("+iRow+");").
+						attr("data-toggle","tooltip").
+						attr("title","delete").
+						attr("href","api/surrogacy/"+oData.id);
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+				}
+	        ]
+		});
+	});
+	
+</script>
+
+<div class="row">
+	<div class="page-header">Surrogate search</div>
+	<div class="col-sm-12 page-body">
+		<div class="well page-search">
+			<div class="actions">
+				<a onclick="printPage('surrogateSearchDataTable_wrapper')" title="print" href="javascript:void(0);" class="btn btn-primary" data-toggle="tooltip"><i class="icon-print"></i></a>
+		    </div>
+			<form data-bindTable="surrogateSearchDataTable" action="api/surrogacy/queryList/creator" method="get">
+				<div class="row form-inline">
+					<div class="form-group">
+						<label for="control-label" class="control-label">Age:</label>
+						<input type="text" name="ageMin" maxlength="3" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="1" data-slider-max="100"></div>
+						<input type="text" name="ageMax" maxlength="3" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Height(Feet):</label>
+						<input type="text" name="heightMin" maxlength="2" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="1" data-slider-max="20"></div>
+						<input type="text" name="heightMax" maxlength="2" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Weight(Pound):</label>
+						<input type="text" name="weightMin" maxlength="3" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="1" data-slider-max="999"></div>
+						<input type="text" name="weightMax" maxlength="3" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<button title="Search" type="submit" class="btn btn-primary" data-toggle="tooltip"><i class="icon-search"></i></button>
+						<button title="More conditions" type="button" class="btn btn-default showCriteria" data-toggle="tooltip"><i class="icon-retweet"></i></button>
+					</div>
+				</div>
+				<div class="moreCriteria form-grid-top">
+					<div class="row form-grid form-inline">
+						<div class="form-group">
+							<label for="control-label" class="control-label">Ethnicity:</label>
+							<input type="text" class="form-control" name="ethnicity"/>
+						</div>
+						<div class="form-group">
+							<label for="control-label" class="control-label">Nationality:</label>
+							<input type="text" class="form-control" name="nationalOrigin"/>
+						</div>
+						<div class="form-group">
+							<label for="control-label" class="control-label">Occupation:</label>
+							<input type="text" class="form-control" name="occupation" />
+						</div>
+						<div class="form-group">
+							<label for="control-label" class="control-label">Been a surrogate/donor before:</label>
+							<input type="text" class="form-control" name="beenASurrogateBefore"/>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	    <table id="surrogateSearchDataTable" class="searchDataTable"></table>
+	</div>
+</div>
+

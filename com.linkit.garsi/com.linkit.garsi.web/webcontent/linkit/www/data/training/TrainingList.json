@@ -1,0 +1,53 @@
+[
+	{
+		"id": "1",
+		"title": "基础金融知识培训",
+		"lecturer": "张三",
+		"number": "30",
+		"imgurl":"common/img/PX01.png"
+	},{
+		"id": "2",
+		"title": "高级金融知识培训",
+		"lecturer": "李四",
+		"number": 210,
+		"imgurl":"common/img/PX02.png"
+	},{
+		"id": "3",
+		"title": "基础金融知识培训",
+		"lecturer": "张三",
+		"number": "40",
+		"imgurl":"common/img/PX01.png"
+	},{
+		"id": "4",
+		"title": "高级金融知识培训",
+		"lecturer": "李四",
+		"number": 10,
+		"imgurl":"common/img/PX02.png"
+	},{
+		"id": "5",
+		"title": "基础金融知识培训",
+		"lecturer": "张三",
+		"number": "30",
+		"imgurl":"common/img/PX01.png"
+	},{
+		"id": "6",
+		"title": "高级金融知识培训",
+		"lecturer": "李四",
+		"number": 230,
+		"imgurl":"common/img/PX02.png"
+	},{
+		"id": "7",
+		"title": "基础金融知识培训",
+		"lecturer": "张三",
+		"number": "30",
+		"imgurl":"common/img/PX01.png"
+	},{
+		"id": "8",
+		"title": "高级金融知识培训",
+		"lecturer": "李四",
+		"number": 210,
+		"imgurl":"common/img/PX02.png"
+	}
+]
+
+

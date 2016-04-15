@@ -1,0 +1,90 @@
+<script type="text/javascript">
+	$(function($) {
+		$("#customerConditionsDataTable").dataTable({
+			aoColumns: [
+				{sTitle:"Serial No.",mDataProp:null,bSortable:false,sClass:"index",
+					fnRender:function(o,val) {
+            			return o.iDataRow+1;
+                	}
+				},
+				
+				{sTitle: "ID",mDataProp:"ID"},
+				
+				{sTitle: "Age",mDataProp:"AGE"},
+				
+				{sTitle: "Nationality",mDataProp:"Nationality"},
+				
+				{sTitle: "Agency",mDataProp:"Company"},
+                
+                {sTitle: "Status",mDataProp:"STATUS"},
+            	
+            	{sTitle: "Operation",mDataProp:null,sClass:"action",
+            		fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a><i class='icon-file-alt'></i></a>").
+						attr("data-refresh","content").
+						attr("title","Detailed Profile").
+						attr("href","views/app/content/surrogacy/retrieval/detail.html");
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+				}
+	        ]
+		});
+	});
+</script>
+
+<div class="row">
+	<div class="page-header">Customer request condition</div>
+	<div class="col-sm-12 page-body">
+		<div class="alert alert-success">
+			Customer condition: <span class="alert-link">Age:15-30.</span>
+		</div>
+		<div class="well page-search">
+			<form data-bindTable="customerConditionsDataTable" action="views/app/content/setting/CustomerRequest/detaildata.json">
+				<div class="row form-inline">
+					<div class="form-group">
+						<label for="control-label" class="control-label">Age:</label>
+						<input type="text" name="minAge" id="minAge" maxlength="3" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="1" data-slider-max="100"></div>
+						<input type="text" name="maxAge" id="maxAge" maxlength="3" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Height(Feet):</label>
+						<input type="text" name="minHeight" id="minHeight" maxlength="3" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="100" data-slider-max="200"></div>
+						<input type="text" name="maxHeight" id="maxHeight" maxlength="3" class="form-control page-slider-input required digits"/>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Weight(Pound):</label>
+						<input type="text" name="minHeight" id="minHeight" maxlength="3" class="form-control page-slider-input required digits"/>
+						<div class="slider-range page-slider" data-slider-min="100" data-slider-max="500"></div>
+						<input type="text" name="maxHeight" id="maxHeight" maxlength="3" class="form-control page-slider-input required digits"/>
+					</div>
+				</div>
+				<div class="row form-grid-top form-inline">
+					<div class="form-group">
+						<label for="control-label" class="control-label">BMI:</label>
+						<input type="text" class="form-control" name="inputName" id="inputName" />
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Ethnicity:</label>
+						<input type="text" class="form-control" name="inputName" id="inputName" />
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Race:</label>
+						<input type="text" class="form-control" name="inputName" id="inputName" />
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Nationality:</label>
+						<input type="text" class="form-control" name="inputName" id="inputName" />
+					</div>
+					<div class="form-group">
+						<button title="Search" type="submit" class="btn btn-primary" data-toggle="tooltip"><i class="icon-search"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	    <table id="customerConditionsDataTable" class="searchDataTable"></table>
+	</div>
+</div>

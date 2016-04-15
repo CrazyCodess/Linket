@@ -1,0 +1,114 @@
+<script type="text/javascript">
+$(function($){
+	var menu = $("#menu-list").find("a");
+	menu.each(function(i){
+		$(this).click(function(){
+			menu.removeAttr("class");
+			$(this).attr("class","active");
+		});
+	});
+	//#14a4ec
+	$("#menu-list").niceScroll({  
+		touchbehavior:false,  
+        cursorcolor:"#00C0BC",  
+        cursoropacitymax:1.6,  
+        cursorwidth:8,  
+        horizrailenabled:false,  
+        cursorborder:0,
+        cursorborderradius:0,  
+        autohidemode:true  
+	});
+});
+</script>
+
+<div class="left-nav">
+	<div class="logo">
+		<img src="images/logo.png" width="50%" />
+	</div>
+	<ul id="menu-list" class="menu-list">
+		<li>
+			<a data-refresh="content" href="views/app/content/home/index.html">
+					<div><i class="icon-home icon-3x"></i></div>
+					<div class="menu-label">Home</div>
+			</a>
+		</li>
+		<li data-permCode="surrogacy">
+			<a data-refresh="content" href="views/app/content/surrogacy/upload/index.html">
+					<div><i class="icon-upload icon-3x"></i></div>
+					<div class="menu-label">Surrogate profile upload</div>
+			</a>
+		</li>
+		<li data-permCode="surrogacy">
+		<a data-refresh="content" href="views/app/content/surrogacy/retrieval/index.html">
+				<div><i class="icon-search icon-3x"></i></div>
+				<div class="menu-label">Surrogate search</div>
+
+		</a>
+		</li>
+		<li data-permCode="egg">
+			<a data-refresh="content" href="views/app/content/eggService/upload/index.html">
+				<div><i class="icon-upload icon-3x"></i></div>
+				<div class="menu-label">Egg donor profile upload</div>
+			</a>
+		</li>
+		<li data-permCode="egg">
+		<a data-refresh="content" href="views/app/content/eggService/retrieval/index.html">
+				<div><i class="icon-search icon-3x"></i></div>
+				<div class="menu-label">Egg donor search</div>
+
+		</a>
+		</li>
+		<li data-permCode="customer">
+		<a data-refresh="content" href="views/app/content/customer/eggCondition/index.html">
+				<div><i class="icon-file-alt icon-3x"></i></div>
+				<div class="menu-label">Egg donor selection criteria</div>
+
+		</a>
+		</li>
+		<li data-permCode="customer">
+		<a data-refresh="content" href="views/app/content/customer/eggChoice/index.html">
+				<div><i class="icon-list icon-3x"></i></div>
+				<div class="menu-label">Egg donor lists</div>
+
+		</a>
+		</li>
+		<li data-permCode="customer">
+		<a data-refresh="content" href="views/app/content/customer/surrogacyCondition/index.html">
+				<div><i class="icon-file-alt icon-3x"></i></div>
+				<div class="menu-label">Surrogate selection criteria</div>
+
+		</a>
+		</li>
+		<li data-permCode="customer">
+		<a data-refresh="content" href="views/app/content/customer/surrogacyChoice/index.html">
+				<div><i class="icon-list icon-3x"></i></div>
+				<div class="menu-label">Surrogate lists</div>
+		</a>
+		</li>
+		<!-- <li data-permCode="garsi">
+		<a data-refresh="content" href="views/app/content/setting/CustomerRequest/index.html">
+				<div><i class="icon-search icon-3x"></i></div>
+				<div class="menu-label">Customer request</div>
+		</a>
+		</li> -->
+		<li data-permCode="garsi">
+		<a data-refresh="content" href="views/app/content/setting/CustomerSelection/index.html">
+				<div><i class="icon-list icon-3x"></i></div>
+				<div class="menu-label">Customer selection</div>
+		</a>
+		<li>
+		<a data-refresh="content" href="views/app/content/documents/index.html">
+				<div><i class="icon-file-alt icon-3x"></i></div>
+				<div class="menu-label">Documents</div>
+
+		</a>
+		</li>
+		</li>
+		<li data-permCode="garsi">
+		<a data-refresh="content" href="views/app/content/setting/user/index.html">
+				<div><i class="icon-cog icon-3x"></i></div>
+				<div class="menu-label">Manage</div>
+		</a>
+		</li>
+	</ul>
+</div>

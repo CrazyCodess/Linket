@@ -1,0 +1,9 @@
+/* app css stylesheet */
+.my-align-center {
+	text-align: center;
+}
+
+.my-ion-75 {
+	width: 75px;
+	height: 75px;
+}

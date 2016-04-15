@@ -1,0 +1,26 @@
+{
+	"total":3,
+	"results":[
+		{
+			"ID":"1",
+			"AGE":"36",
+			"Nationality":"chinese",
+			"Company":"Company A",
+			"STATUS":"Pre-Occupied"
+		},
+		{
+			"ID":"1",
+			"AGE":"36",
+			"Nationality":"chinese",
+			"Company":"Company B",
+			"STATUS":"Pre-Occupied"
+		},
+		{
+			"ID":"1",
+			"AGE":"36",
+			"Nationality":"chinese",
+			"Company":"Company C",
+			"STATUS":"Pre-Occupied"
+		}
+	]
+}

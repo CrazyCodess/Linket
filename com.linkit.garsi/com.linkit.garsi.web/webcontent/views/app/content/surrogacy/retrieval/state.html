@@ -1,0 +1,44 @@
+<script>
+$(function($) {
+	$(function($) {
+		if($(document.body).data("myModal")){
+			var param = $(document.body).data("myModal");
+			$("#resourceId").val(param.id);
+			$("#state").val(param.state);
+		}
+	});
+});
+</script>
+
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h4 class="modal-title" id="myModalLabel">
+				Modified status
+			</h4>
+		</div>
+		<form id="addOrEditForm"
+				data-callback="dataTableDraw('surrogateSearchDataTable');closeModal();" class="form-horizontal" role="form"
+				action="api/surrogacy/resourceState" method="PUT">
+			<div class="modal-body">
+					<input type="hidden" name="resourceId" id="resourceId"/>
+					<div class="form-group">
+						<label class="control-label col-sm-3" for="state">Status:</label>
+						<div class="col-sm-8">
+							<select class="form-control" name="state" id="state">
+								<option value="enable">enable</option>
+								<option value="disable">disable</option>
+							</select>
+						</div>
+					</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+

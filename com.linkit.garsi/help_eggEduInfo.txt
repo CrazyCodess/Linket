@@ -1,0 +1,63 @@
+
+EggEduInfo对象操作
+
+=============================================================================
+添加教育信息时一定要传一个resourceId,和基本信息关联
+1. 添加对象
+接口地址：http://localhost:6001/api/egg/edu
+请求方式：post
+请求参数
+{"resourceId":"4028c2cd4ef964bb014ef96543d00000",
+"fullEdu":"dfsfdsfsd",
+"school":"gaozhon",
+"university":"nada",
+"gpa":"fdsf",
+"major":"ys",
+"language":"dfsf",
+"fluency":"dfsd",
+"occupation":"dsfsd"}
+
+返回结果：
+{"data":{"id":"4028c2cd4ef964bb014ef968e7f40002","fullEdu":"dfsfdsfsd","school":"gaozhon","university":"nada","gpa":"fdsf","major":"ys","language":"dfsf","fluency":"dfsd","occupation":"dsfsd","resourceId":"4028c2cd4ef964bb014ef96543d00000","createTime":"08/04/2015","updateTime":"08/04/2015"},"success":true,"errors":{}}
+
+=============================================================================
+2.获取一个EggEduInfo对象
+接口地址：http://localhost:6001/api/egg/edu/4028c2cd4ef964bb014ef968e7f40002
+请求方式：get
+请求参数：4028c2cd4ef964bb014ef968e7f40002
+返回结果：{"id":"4028c2cd4ef964bb014ef968e7f40002","fullEdu":"dfsfdsfsd","school":"gaozhon","university":"nada","gpa":"fdsf","major":"ys","language":"dfsf","fluency":"dfsd","occupation":"dsfsd","resourceId":"4028c2cd4ef964bb014ef96543d00000","createTime":"08/04/2015","updateTime":"08/04/2015"}
+
+
+=============================================================================
+3. 更新对象
+接口地址：http://localhost:6001/api/egg/edu
+请求方式：put
+请求参数
+{
+"id":"402859814ef6163e014ef616bbd40000",
+"resourceId":"4028c2cd4ef964bb014ef96543d00000",
+"fullEdu":"dfsfdsfsd",
+"school":"gaozhon",
+"university":"nada",
+"gpa":"fdsf",
+"major":"ys",
+"language":"dfsf",
+"fluency":"dfsd",
+"occupation":"dsfsd"}
+返回结果：{"success":true,"errors":{}}
+
+=============================================================================
+4. 根据卵子ID获取教育信息列表
+
+接口地址：http://localhost:6001/api/egg/edu/list/402859814ef42f31014ef44058000000
+请求方式：get
+请求参数: 卵子ID->402859814ef42f31014ef44058000000
+返回结果：[{"id":"402859814ef6163e014ef616bbd40000","resourceId":"402859814ef42f31014ef44058000000","fullEdu":"ggggg","school":"gaozhon","university":"nada","gpa":"fdsf","major":"ys","language":"dfsf","fluency":"dfsd","occupation":"dsfsd","updateTime":"04/08/2015"}]
+
+
+=============================================================================
+5.删除一个教育信息
+接口地址：http://localhost:6001/api/egg/edu/402859814ef6163e014ef616bbd40000
+请求方式：delete
+请求参数: 主键id->402859814ef6163e014ef616bbd40000
+返回结果：{"success":true,"errors":{}}

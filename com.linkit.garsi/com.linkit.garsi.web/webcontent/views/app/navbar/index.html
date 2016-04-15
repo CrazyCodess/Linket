@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	$(function($) {
+		$("#loginUserName").html(account.userName);
+	});
+	function showNavigation(){
+		$("#sidebar-nav").css("position","absolute").show();
+	}
+</script>
+
+<div class="navigation-header">
+	<div class="pull-left">
+		<button class="btn btn-primary btn-sm" id="navbar-toggle-btn" type="button" onclick="showNavigation()">
+	      <span class="icon-align-justify"></span>
+	    </button>
+    </div>
+	<div class="pull-right" ng-controller="loginSessionCtrl">
+		<span class="nav-msg"><i class="icon-user"></i> Welcome：<span id="loginUserName"></span></span>
+		<a class="nav-button" data-popup="modal" href="views/commons/editPassword.html">
+				<i class="icon-cog"></i> <span>Change password</span>
+		</a>
+		<a class="nav-button" data-popup="modal" href="views/commons/lock.html">
+			<i class="icon-lock"></i><span>Lock</span>
+		</a>
+		<a class="nav-button" href="javascript:void(0);" onclick="quitSystem();">
+			<i class="icon-off"></i> <span>Sign out</span>
+		</a>
+	</div>
+</div>
+<div class="navigation-menu">
+	<div id="loading_div"><i class="icon-spinner icon-spin icon-2x"></i></div>
+</div>

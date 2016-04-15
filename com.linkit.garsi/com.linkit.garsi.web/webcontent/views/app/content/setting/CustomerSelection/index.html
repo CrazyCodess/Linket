@@ -1,0 +1,90 @@
+<script type="text/javascript">
+	$(function($) {
+		$("#finalListDataTable").dataTable({
+			aoColumns: [
+				{sTitle:"Serial No.",mDataProp:null,bSortable:false,sClass:"index",
+					fnRender:function(o,val) {
+            			return o.iDataRow+1;
+                	}
+				},
+				
+				{sTitle: "Name",mDataProp:null,
+                	"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a></a>").
+							append(oData[1]).
+							attr("data-refresh","content");
+						if(oData[2]=="egg"){
+							a.attr("href","views/app/content/eggService/retrieval/detail.html");
+						}else if(oData[2]=="surrogacy"){
+							a.attr("href","views/app/content/surrogacy/retrieval/detail.html");
+						}
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+            	},
+				
+				{sTitle: "Type",mDataProp:"2"},
+				
+				{sTitle: "Patient name",mDataProp:"5"},
+				
+                {sTitle: "Process Status",mDataProp:"3"},
+                
+                {sTitle: "Resource Status",mDataProp:"4"},
+            	
+            	{sTitle: "Operation",mDataProp:null,sClass:"action",
+            		fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						
+						var a=$("<a><i class='icon-ok'></i></a>").
+						attr("data-action","click").
+						attr("data-confirmMessage","Confirm the final selection for the customer?").
+						attr("data-toggle","tooltip").
+						attr("title","Selected").
+						attr("data-callback","$(actionEvent.target).parents('.dataTable').dataTable().fnDeleteRow("+iRow+");");
+						if(oData[2]=="egg"){
+							a.attr("href","api/egg/progressState?resourceId="+oData[0]+"&processState=finally");
+						}else if(oData[2]=="surrogacy"){
+							a.attr("href","api/surrogacy/progressState?resourceId="+oData[0]+"&processState=finally");
+						}
+						
+						htmlf.append(a);
+						
+						/* a=$("<a><i class='icon-ban-circle'></i></a>").
+						attr("data-action","click").
+						attr("data-confirmMessage","Confirm and cancel?").
+						attr("data-toggle","tooltip").
+						attr("title","Cancel").
+						attr("href","services/setting/user/delete.json?pid="+oData.pid);
+						htmlf.append(a); */
+						ajaxInterceptor(htmlf);
+					}
+				}
+	        ]
+		});
+	});
+</script>
+
+<div class="row">
+	<div class="page-header">Customer selection</div>
+	<div class="col-sm-12 page-body">
+		<div class="well page-search">
+			<form data-bindTable="finalListDataTable" action="api/egg/list/getAllCustomerSelect">
+				<div class="row form-inline">
+					<div class="form-group">
+						<label for="control-label" class="control-label">Name:</label>
+						<input type="text" class="form-control" name="eggName" />
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Patient name:</label>
+						<input type="text" class="form-control" name="surrName" />
+					</div>
+					<div class="form-group">
+						<button title="Search" type="button" class="btn btn-primary" data-toggle="tooltip"><i class="icon-search"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	    <table id="finalListDataTable" class="searchDataTable"></table>
+	</div>
+</div>

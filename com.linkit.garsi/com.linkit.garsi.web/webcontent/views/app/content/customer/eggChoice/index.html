@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	$(function($) {
+		$("#choiceDataTable").dataTable({
+			aoColumns: [
+				{sTitle:"Serial No.",mDataProp:null,bSortable:false,sClass:"index",
+					fnRender:function(o,val) {
+            			return o.iDataRow+1;
+                	}
+				},
+				
+				{sTitle: "name",mDataProp:null,
+                	"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a></a>").
+							append("Anonymous").
+							attr("data-refresh","content").
+							attr("href","views/app/content/customer/eggCondition/detail.html?id="+oData.id);
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+            	},
+            	
+            	{sTitle: "Age",mDataProp:"age"},
+				
+				{sTitle: "Height(Feet)",mDataProp:"height"},
+                
+                {sTitle: "Weight(Pound)",mDataProp:"weight"},
+                
+                {sTitle: "Blood type",mDataProp:"bloodType"},
+                
+                {sTitle: "Status",mDataProp:"processState"}
+            	
+            	/*{sTitle: "Operation",mDataProp:null,sClass:"action",
+            		fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+						var htmlf=$(nTd);
+						var a=$("<a><i class='icon-ok'></i></a>").
+						attr("data-action","click").
+						attr("data-confirmMessage","Are you sure you want to Selected it?").
+						attr("data-toggle","tooltip").
+						attr("title","Selected").
+						attr("href","services/setting/user/delete.json?pid="+oData.pid);
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+				}*/
+	        ]
+		});
+	});
+</script>
+
+<div class="row">
+	<div class="page-header">Egg donor lists</div>
+	<div class="col-sm-12 page-body" style="padding-top: 20px;">
+		<div class="well page-search" style="display: none;">
+			<form data-bindTable="choiceDataTable" action="api/egg/list/myEgg">
+				<div class="row form-inline">
+					<div class="form-group">
+					</div>
+					<div class="form-group">
+						<button title="Search" type="button" class="btn btn-primary" data-toggle="tooltip"><i class="icon-search"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	    <table id="choiceDataTable" class="searchDataTable"></table>
+	</div>
+</div>

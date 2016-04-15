@@ -1,0 +1,54 @@
+
+1. 添加对象
+接口地址：http://localhost:6001/api/egg/donateask
+请求方式：post
+请求参数
+{"isDonate": "yes",
+    "contactType": "1",
+    "donateDate": ["ss1","sss"],
+    "place": ["ff","fsd"],
+    "retrievedEgg":["gg","g2"],
+    "matureEgg":["ee","ee1"],
+    "fertilizeEgg":["rr1","rr2"],
+    "pregnancy":["aa1","aa2"],
+    "resourceId":"2c9ba3814efcf81a014efd065df50002"
+}
+
+返回结果：
+{"data":{"isDonate":"yes","contactType":"1","donateDate":["ss1","sss"],"place":["ff","fsd"],"retrievedEgg":["gg","g2"],"matureEgg":["ee","ee1"],"fertilizeEgg":["rr1","rr2"],"pregnancy":["aa1","aa2"],"resourceId":"2c9ba3814efcf81a014efd065df50002"},"success":true,"errors":{}}
+
+
+2. 更新EggAsk对象
+接口地址：http://localhost:6001/api/egg/donateask
+请求方式：put
+请求参数
+{
+"isDonate": "yes3",
+"askId":"2c9ba3814f0c801c014f0c80ce560000",
+    "contactType": "123",
+    "recordIds":["2c9ba3814f0c801c014f0c80ce610001","2c9ba3814f0c801c014f0c80ce610002"],
+    "donateDate": ["ss213f","sss23f"],
+    "place": ["ff2f","fsd23f"],
+    "retrievedEgg":["gg23","g223"],
+    "matureEgg":["ee23","ee123"],
+    "fertilizeEgg":["rr123","rr223"],
+    "pregnancy":["aa123","aa223"],
+    "resourceId":"2c9ba3814efcf81a014efd065df50002"
+}
+
+
+3.获取一个EggAsk对象
+接口地址：http://localhost:6001/api/egg/donateask/2c9ba3814f0b6d96014f0b6e1f7d0002
+请求方式：get
+请求参数2c9ba3814f0b6d96014f0b6e1f7d0002
+返回结果：
+{"id":"2c9ba3814f0c801c014f0c80ce560000","isDonate":"yes3","contactType":"123","resourceId":"2c9ba3814efcf81a014efd065df50002","donateRecordList":[{"id":"2c9ba3814f0c801c014f0c80ce610001","donateDate":"ss213f","place":"ff2f","retrievedEgg":"gg23","matureEgg":"ee23","fertilizeEgg":"rr123","pregnancy":"aa123","resourceId":"2c9ba3814efcf81a014efd065df50002","askId":"2c9ba3814f0c801c014f0c80ce560000"},{"id":"2c9ba3814f0c801c014f0c80ce610002","donateDate":"sss23f","place":"fsd23f","retrievedEgg":"g223","matureEgg":"ee123","fertilizeEgg":"rr223","pregnancy":"aa223","resourceId":"2c9ba3814efcf81a014efd065df50002","askId":"2c9ba3814f0c801c014f0c80ce560000"}],"createTime":"08/08/2015","updateTime":"08/08/2015"}
+
+4.删除一个EggAsk对象
+
+接口地址：http://localhost:6001/api/egg/donateask/2c9ba3814f0b6d96014f0b6e1f7d0002
+请求方式：delete
+请求参数2c9ba3814f0c801c014f0c80ce560000
+返回结果：{"success":true,"errors":{}}
+http://localhost:6001/api/egg/donateask/2c9ba3814f0b6d96014f0b6e1f7d0002
+http://localhost:6001/api/egg/donateask/2c9ba3814f0b6d96014f0b6e1f7d0002

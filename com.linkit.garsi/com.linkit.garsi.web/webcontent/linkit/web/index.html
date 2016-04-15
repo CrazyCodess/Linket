@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" ng-app="PingAnApp">
+<head>
+  <meta charset="utf-8">
+  <title>ROSS</title>
+  <!--  样式表引用  -->
+  <link rel="stylesheet" href="../www/lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="common/css/app.css">
+  
+  <!--  插件引用  -->
+  <script src="../www/lib/angular/angular.js"></script>
+  <script src="../www/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="../www/lib/angular-resource/angular-resource.min.js"></script>
+  <script src="../www/lib/jquery/dist/jquery.min.js"></script>
+  <script src="../www/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!--  公用服务（web、mobile端）引用  -->
+  <!--  <script src="../www/common/js/services/commonServices.js"></script> -->  
+	
+  <!--  公用服务（web端）引用  -->
+  
+</head>
+<body>
+  <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#/">ROSS</a>
+	    </div>
+	
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+	          	人员信息 <span class="caret"></span>
+	          </a>
+	          <ul class="dropdown-menu">
+	            <li ui-sref="personalInfo.detail"><a>个人信息查询</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li ui-sref="personalInfo.lists"><a>人员信息查询</a></li>
+	          </ul>
+	        </li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+	          	考勤请假 <span class="caret"></span>
+	          </a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">异常考勤</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">请假申请</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">请假审批</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">请假查询</a></li>
+	          </ul>
+	        </li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+	          	绩效管理 <span class="caret"></span>
+	          </a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">绩效评价</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">团队绩效查询</a></li>
+	          </ul>
+	        </li>
+	        <li>
+	          <a href="#">薪资薪酬</a>
+	        </li>
+	        <li>
+	          <a href="#">作业日报</a>
+	        </li>
+	      </ul>
+	      
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人设置 <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">密码修改</a></li>
+	            <li><a href="#/login">退出登录</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+  </nav>
+  <div ui-view></div>
+  
+</body>
+<!-- 本页面js模块引用  -->
+<script src="common/js/app.js"></script>
+<script src="dist/common/js/common_concat.js"></script>
+<script src="dist/modules/modules_concat.js"></script>
+
+</html>

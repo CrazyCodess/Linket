@@ -1,0 +1,79 @@
+<script>
+	$(function($) {
+		$("#documentDataTable").dataTable({
+			aoColumns: [
+				{sTitle:"Serial No.",mDataProp:null,bSortable:false,sClass:"index",
+					fnRender:function(o,val) {
+            			return o.iDataRow+1;
+                	}
+				},
+				
+				{sTitle: "Document Name",mDataProp:"title"},
+				
+                {sTitle: "Document type",mDataProp:"type"},
+                
+                {sTitle: "Upload time",mDataProp:"time",
+                    fnRender:function(o,val) {
+        			return val==""?"":new Date(val).format("yyyy-mm-dd HH:MM:ss");
+            	}},
+                
+            	{sTitle: "Operation",mDataProp:null,sClass:"action",
+            		"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+            			var htmlf=$(nTd);
+						var a=$("<a><i class='icon-remove'></i></a>").
+						attr("data-permCode","garsi,egg,surrogacy").
+						attr("data-action","click").
+						attr("data-method","DELETE").
+						attr("data-confirmMessage","Are you sure you want to delete it?").
+						attr("data-callback","$(actionEvent.target).parents('.dataTable').dataTable().fnDeleteRow("+iRow+");").
+						attr("data-toggle","tooltip").
+						attr("title","delete").
+						attr("href","api/document/"+oData.id);
+						htmlf.append(a);
+						
+						a=$("<a><i class=' icon-download-alt'></i></a>").
+						attr("data-toggle","tooltip").
+						attr("title","download").
+						attr("href","api/blob/"+oData.contentId);
+						htmlf.append(a);
+						ajaxInterceptor(htmlf);
+					}
+				}
+	        ]
+		});
+	});
+	
+</script>
+
+<div class="row">
+	<div class="page-header">Documents</div>
+	<div class="col-sm-12 page-body">
+		<div class="well page-search">
+			<div class="actions">
+				<a data-permCode="garsi,egg,surrogacy" title="Add document" href="views/app/content/documents/addOrEdit.html" style="display:block" class="btn btn-primary" data-popup="modal" data-toggle="tooltip"><i class="icon-plus"></i></a>
+		    </div>
+			<form data-bindTable="documentDataTable" action="api/document" method="get">
+				<div class="row form-inline">
+					<div class="form-group">
+						<label for="control-label" class="control-label">Document name:</label>
+						<input type="text" class="form-control" name="title"/>
+					</div>
+					<div class="form-group">
+						<label for="control-label" class="control-label">Document type:</label>
+						<select class="form-control" name="type">
+							<option></option>
+							<option value="agreement">agreement</option>
+							<option value="resources">resources</option>
+							<option value="others">others</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<button title="Search" type="button" class="btn btn-primary" data-toggle="tooltip"><i class="icon-search"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	    <table id="documentDataTable" class="searchDataTable"></table>
+	</div>
+</div>
+

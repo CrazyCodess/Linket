@@ -1,0 +1,14 @@
+/* app css stylesheet */
+
+
+.loginBG {
+  position: absolute;
+  top: 0;
+  right:0;
+  bottom:0;
+  left:0;
+  padding: 0;margin:0;
+  background:url("../img/login/blue_BG.jpg");
+  /*background: rgba(0, 0, 0, 0) linear-gradient(45deg, #020031 0px, #6d3353 100%) repeat scroll 0 0;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;*/
+}

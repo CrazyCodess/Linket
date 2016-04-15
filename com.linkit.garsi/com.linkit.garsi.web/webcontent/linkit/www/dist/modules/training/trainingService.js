@@ -1,0 +1,2 @@
+/*! ross */
+"use strict";angular.module("TrainingServices",["ngResource","commonServices"]).factory("TrainingListService",["$resource","configData",function(a,b){var c=b.basePath+"data/training/TrainingList.json";return a(c,{},{})}]);

@@ -1,0 +1,625 @@
+<div class="row">
+	<div class="page-header">Egg donor Detail</div>
+	<div class="page-body">
+		<div class="col-sm-12">
+				<ul class="nav nav-tabs form-nav" role="tablist">
+				    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Personal Information</a></li>
+				    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Donation History</a></li>
+				    <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Education/Occupation</a></li>
+				    <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Character/Personality</a></li>
+				    <li role="presentation"><a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">Reproductive History</a></li>
+					<li role="presentation"><a href="#tab6" aria-controls="tab6" role="tab" data-toggle="tab">Medical Information</a></li>
+					<li role="presentation"><a href="#tab7" aria-controls="tab7" role="tab" data-toggle="tab">Family History</a></li>
+					<li role="presentation"><a href="#tab8" aria-controls="tab8" role="tab" data-toggle="tab">Photo upload</a></li>
+				</ul>
+				
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="tab1">
+					<table class="table table-bordered">
+						<tr>
+							<th class="tr50">
+								1. Birthdate:
+							</th>
+							<td class="tr50">
+								<span data-value="birthdate"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								2. Age:
+							</th>
+							<td>
+								<span data-value="age"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								3. Blood Type:
+							</th>
+							<td>
+								<span data-value="bloodType"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								4. Race:
+							</th>
+							<td>
+								<span data-value="race"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								5. Ethnic Origin:
+							</th>
+							<td>
+								<span data-value="ethnicOrigin"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								6. Height(feet):
+							</th>
+							<td>
+								<span data-value="height"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								7. Weight(pound):
+							</th>
+							<td>
+								<span data-value="weight"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								8. BMI:
+							</th>
+							<td>
+								<span data-value="bmi"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								9. Skin Tone:
+							</th>
+							<td>
+								<span data-value="skinTone"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								10. Skin Type:
+							</th>
+							<td>
+								<span data-value="skinType"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								11. Eye Color:
+							</th>
+							<td>
+								<span data-value="eyeColor"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								12. Hair Color:
+							</th>
+							<td>
+								<span data-value="hairColor"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								13. Hair Type:
+							</th>
+							<td>
+								<span data-value="hairType"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								14. Hair Texture:
+							</th>
+							<td>
+								<span data-value="hairTexture"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								15. Body Type:
+							</th>
+							<td>
+								<span data-value="bodyType"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								16. Native Tongue:
+							</th>
+							<td>
+								<span data-value="nativeTongue"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>17. Marital Status:</th>
+							<td>
+								<span data-value="maritalStatus"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>18. Do you drive?</th>
+							<td>
+								<span data-value="drive"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>19. Compenstation:</th>
+							<td>
+								<span data-value="compenstation"></span>
+							</td>
+						</tr>
+					</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab2">
+					<table class="table table-bordered">
+						<tr>
+							<th class="tr50">
+								1. Have you ever donated before?
+							</th>
+							<td class="tr50">
+								<span data-value="isDonate"></span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<b>2. If the answer is “yes”, please fill out below:</b>
+								<table class="table table-bordered" id="donationTable">
+								<tr>
+									<td style="width:12%">
+										Donation
+									</td>
+									<td>
+										Date
+									</td>
+									<td>
+										Place
+									</td>
+									<td>
+										# of retrieved eggs
+									</td>
+									<td>
+										# of mature eggs 
+									</td>
+									<td>
+										# of fertilize eggs 
+									</td>
+									<td>
+										Pregnancy (yes/no) 
+									</td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								3. What type of contact would you like with the recipient(s)?
+							</th>
+							<td>
+								<span data-value="contactType"></span>
+							</td>
+						</tr>
+					</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab3">
+						<table class="table table-bordered">
+							<tr>
+								<th class="tr50">1. Completed Edu. to the highest level of education completed:</th>
+								<td class="tr50">
+									<span data-value="fullEdu"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>2. High school to Name of high school you attended:</th>
+								<td>
+									<span data-value="school"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>3. University to Name of university you attended:</th>
+								<td>
+									<span data-value="university"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>4. GPA:</th>
+								<td>
+									<span data-value="gpa"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>5. Major:</th>
+								<td>
+									<span data-value="major"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>6. What languages can you speak?</th>
+								<td>
+									<span data-value="language"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>7. Remove fluency:</th>
+								<td>
+									<span data-value="fluency"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>8. Current occupation:</th>
+								<td>
+									<span data-value="occupation"></span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab4">
+					<table class="table table-bordered">
+						<tr>
+							<th class="tr50">1. Character/Personality:</th>
+							<td class="tr50">
+								<span data-value="personality"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>2. Hobby/Interest:</th>
+							<td>
+								<span data-value="hobby"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>3. Talent to Talents/Special skills:</th>
+							<td>
+								<span data-value="talent"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>4. Favorite Color:</th>
+							<td>
+								<span data-value="favColor"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>5. Favorite Sesson:</th>
+							<td>
+								<span data-value="favSesson"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>6. Favorite Food:</th>
+							<td>
+								<span data-value="favFood"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>7. Favorite Movie:</th>
+							<td>
+								<span data-value="favMovie"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>8. Favorite City:</th>
+							<td>
+								<span data-value="favCity"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>9. Favorite song:</th>
+							<td>
+								<span data-value="favSong"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>10. Childhood:</th>
+							<td>
+								<span data-value="childhood"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>11. Future Goal:</th>
+							<td>
+								<span data-value="futureGoal"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>12. The reason for donation:</th>
+							<td>
+								<span data-value="donation"></span>
+							</td>
+						</tr>
+					</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab5">
+						<table class="table table-bordered">
+							<tr>
+								<th class="tr50">1. Pregnancy to Have you ever been pregnant before?</th>
+								<td class="tr50">
+									<span data-value="pregnancy"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>1.1 If yes, how many children do you have?</th>
+								<td>
+									<span data-value="child"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>2. Age when you got your first period:</th>
+								<td>
+									<span data-value="ageFmp"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>3. Do you have regular monthly menstrual period?If no, please explain</th>
+								<td>
+									<span data-value="regularPeriod"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>4. How many days do you bleed?</th>
+								<td>
+									<span data-value="dayBleeding"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>5. What form of birth control are you using?</th>
+								<td>
+									<span data-value="hatForm"></span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab6">
+						<table class="table table-bordered">
+							<tr>
+								<th class="tr50">1. Medical problem to Have you ever had or do you have any medical problems?If yes, please explain.</th>
+								<td class="tr50">
+									<span data-value="medicalProblem"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>2. Psychological problem to have you ever had or do you have any psychological problems?If yes, please explain</th>
+								<td>
+									<span data-value="phyProblem"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>3. Illness/Injury to Have you ever had or do you have any serious illnesses or injuries?If yes, please explain</th>
+								<td>
+									<span data-value="injury"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>4. Do you have any allergy?If yes, please explain</th>
+								<td>
+									<span data-value="allergy"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>5. Do you consume Alcoholic beverages?If yes, how often do you consume?</th>
+								<td>
+									<span data-value="alcohol"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>6. Smoke:</th>
+								<td>
+									<span data-value="smoke"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>7. Exercise:</th>
+								<td>
+									<span data-value="exercise"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>8. Sleep Pattern:</th>
+								<td>
+									<span data-value="sleepPattern"></span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab7">
+						<table class="table table-bordered">
+							<tr>
+								<th class="tr50">1. Are there any family members who have had or have major medical problems?If yes, please explain</th>
+								<td class="tr50">
+									<span data-value="famHistory"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>2. Are there any family members who have had or have any major psychological problems?If yes, please explain</th>
+								<td>
+									<span data-value="famPsyIssues"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>3. Are there any family members who have had or have major genetic diseases?If yes, please explain</th>
+								<td>
+									<span data-value="famGenHistory"></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+								<b>4. Please fill out below:</b>
+								<table class="table table-bordered" id="familyTable">
+									<tr>
+										<td>
+											Family relationship
+										</td>
+										<td>
+											Age
+										</td>
+										<td>
+											Ethnic Origin
+										</td>
+										<td>
+											Height
+										</td>
+										<td>
+											Weight
+										</td>
+										<td>
+											Hair Color 
+										</td>
+										<td>
+											Eye Color
+										</td>
+										<td>
+											Health Status
+										</td>
+										<td>
+											Deceased age
+										</td>
+										<td>
+											decease Cause
+										</td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tab8">
+						<div class="form-group" style="padding-left:130px;" id="photoShow">
+							
+						</div>
+					</div>
+				</div>
+				<div class="row form-grid">
+					<div class="col-sm-12 text-right">
+						<a class="btn btn-default" href="javascript:void(0);" onclick="history.back();">Cancel</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function($) {
+		if($(document.body).data("contentPage")){
+			var param = $(document.body).data("contentPage");
+			$.ajax({
+				type : "GET",
+				url : "api/egg/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					fillDetail(json,$("#tab1"));
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/egg/donateask/list/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					fillDetail(json[0],$("#tab2"));
+					var donateRecordList = json[0].donateRecordList;
+					$.each(donateRecordList,function(i,n){
+						var html="<tr>";
+						html+="<td>"+ (i+1) +" Donation</td>";
+						html+="<td>"+ n.donateDate +"</td>";
+						html+="<td>"+ n.place +"</td>";
+						html+="<td>"+ n.retrievedEgg +"</td>";
+						html+="<td>"+ n.matureEgg +"</td>";
+						html+="<td>"+ n.fertilizeEgg +"</td>";
+						html+="<td>"+ n.pregnancy +"</td>";
+						html+="</tr>";
+						$("#donationTable").append(html);
+					});
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/egg/edu/list/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					fillDetail(json[0],$("#tab3"));
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/egg/character/list/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					fillDetail(json[0],$("#tab4"));
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/egg/reproductive/list/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					fillDetail(json[0],$("#tab5"));
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/egg/healhistory/list/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					fillDetail(json[0],$("#tab6"));
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/egg/familyhistory/list/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					fillDetail(json[0],$("#tab7"));
+					var familyMembers = json[0].familyMembers;
+					$.each(familyMembers,function(i,n){
+						var html="<tr>";
+						html+="<td>"+ (n.memberRelation==null?"":n.memberRelation) +"</td>";
+						html+="<td>"+ (n.age==null?"":n.age) +"</td>";
+						html+="<td>"+ (n.ethnicOrigin==null?"":n.ethnicOrigin) +"</td>";
+						html+="<td>"+ (n.height==null?"":n.height) +"</td>";
+						html+="<td>"+ (n.weight==null?"":n.weight) +"</td>";
+						html+="<td>"+ (n.eyeColor==null?"":n.eyeColor) +"</td>";
+						html+="<td>"+ (n.hairColor==null?"":n.hairColor) +"</td>";
+						html+="<td>"+ (n.healthStatus==null?"":n.healthStatus) +"</td>";
+						html+="<td>"+ (n.deceaseAge==null?"":n.deceaseAge) +"</td>";
+						html+="<td>"+ (n.deceaseReson==null?"":n.deceaseReson) +"</td>";
+						html+="</tr>";
+						$("#familyTable").append(html);
+					});
+				}
+			});
+			$.ajax({
+				type : "GET",
+				url : "api/egg/attachment/"+param.id,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				success:function(json){
+					var str = "";
+					$.each(json,function(i, n){
+						str+="<img class='upload-img' src='/api/blob/image/"+ n.contentId +"'/>";
+					});
+						
+					$("#photoShow").html(str);
+				}
+			});
+		}
+	});
+</script>

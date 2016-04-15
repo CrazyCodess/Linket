@@ -1,0 +1,107 @@
+<div class="login">
+	<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span><img src="images/loginLogo.png"></span>
+        </div>
+        <div class="navbar-btn pull-right">
+           	<a class="btn btn-primary" href="javascript:void(0);">I have an invitation code</a>
+        </div>  
+      </div>
+    </nav>
+    
+    <div class="container loginDiv">
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="row">
+				<div id="columnLeft" class="col-sm-6 col-sm-offset-3">
+					<div class="row" style="position: relative;">
+						<div class="col-sm-12 login-title-container">
+					        <h2 id="loginTitle" class="left-margin">Log in to your GARSI</h2>
+					    </div>
+					    <!-- <div class="col-sm-12 tab-container">
+					    	<ul class="nav nav-tabs">
+					    		<li class="active"><a href="#user" aria-controls="home" data-toggle="tab">Use account name</a></li>
+					    	</ul>
+			            </div> -->
+			            <div class="col-sm-12 tab-content">
+			            	<div id="user">																				
+					            <form id="loginForm" data-formEnterKeypress="formSubmit();" class="form-validate" action="api/login" method="post">
+									<div>
+										Account name
+									</div>
+									<div class="form-group">
+										<input type="text" id="username" name="username" placeholder="Account name" class="required form-control loginInput" maxlength="128"/>
+									</div>
+									<div>
+										Password
+									</div>
+									<div class="form-group">
+										<input type="password" id="password" name="password" placeholder="Password" class="required form-control loginInput" maxlength="128"/>
+									</div>
+									<div class="submit">
+										<button type="button" onclick="formSubmit();" class="btn btn-primary btn-login">
+										  Log in 
+										</button>
+										<div id="loading_div"><i class="icon-spinner icon-spin icon-2x"></i></div>
+									</div>
+								</form>
+							</div>
+			            </div>
+			            <div class="col-sm-12 login-foot">
+			            	
+			            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$(".login").css("height",getViewportHeight());
+		if($(".form-validate").length > 0){
+			$(".form-validate").each(function(){
+				var id = $(this).attr("id");
+				$("#"+id).validate({
+					errorElement:"span",
+					errorClass: "help-block has-error",
+					errorPlacement:function(error, element){
+						element.parents(".form-group").append(error);
+					},
+					highlight: function(label) {
+						$(label).closest(".form-group").removeClass("has-success").addClass("has-error");
+					},
+					success: function(label) {
+						label.addClass("valid").closest(".form-group").removeClass("has-error").addClass("has-success");
+					}
+				});
+			});
+		}
+		$("#loginForm").validate();
+		$("#loginForm input")[0].focus();
+	});
+	
+	function formSubmit(){
+		var json = JSON.stringify({"username":$("#username").val(),"password":$("#password").val()});
+		$.ajax({
+			type : "POST",
+			async : true,
+			url : $("#loginForm").attr("action"),
+			data : json,
+			contentType : "application/json; charset=UTF-8",
+			dataType : "json",
+			success:function(data){
+				if(data.success==true){
+					$.cookie("garsiCookieSession", JSON.stringify(data.data),{expires:1});
+					$().message("login success");
+					$(this).oneTime(200, function() {
+						self.location.reload();
+					});
+				}else{
+					$().message(data.message);
+				}
+			}
+		});
+	}
+	</script>
